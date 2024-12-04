@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class InputsLoginComponent {
 
+  formData = {
+    userName: '',
+    password: ''
+  }
+
+  onSubmit():void {
+    console.log(this.formData)
+  }
 }

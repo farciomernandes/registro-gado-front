@@ -1,1 +1,6 @@
-<p>inputs-login works!</p>
+<form>
+  <input type="text" placeholder="Nome de usuário" [(ngModel)]="formData.userName" name="userName">
+  <input type="password" placeholder="Senha" [(ngModel)]="formData.password" name="password">
+
+  <input type="submit" value="Login" id="submit-btn" (click)="onSubmit()">
+</form>

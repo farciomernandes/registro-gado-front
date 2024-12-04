@@ -1,8 +1,61 @@
+@import "../../../theme/variables.scss";
+
+html, body {
+  height: 100%; /* Garante que a altura total seja 100% */
+  margin: 0; /* Remove margens padrão */
+}
+
+h1{
+  color: $color-title;
+  font-weight: 400;
+}
+
+
 .master-container{
   background-image: url("../../../assets/GadoSindi.webp");
-  background-size: cover; /* Faz a imagem cobrir toda a área disponível */
-  background-repeat: no-repeat; /* Evita a repetição da imagem */
-  background-position: center; /* Centraliza a imagem */
-  height: 100vh; /* Certifica-se de que o HTML ocupe toda a altura da janela */
-  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+
+  flex-wrap: wrap; /* Permite que o conteúdo seja reorganizado em telas menores */
+  padding: 1rem; /* Evita que o conteúdo encoste nas bordas em telas pequenas */
+
+  display: flex; /* Ativa o Flexbox */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+
+  .container-logo{
+    background-color: #ffffffb3;
+    padding: 2rem 6rem;
+
+    max-width: 400px; /* Define a largura máxima */
+    width: 100%; /* Permite que o formulário se ajuste em telas menores */
+    box-sizing: border-box; /* Inclui padding no cálculo da largura */
+
+    img{
+      width: 13rem
+    }
+  }
+
+  .informs-login{
+    background-color: $color-white;
+    padding: 2rem 0;
+  }
+
+  .content-login{
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 406px){
+  .container-login{
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .container-logo{
+    padding: 1rem 4rem !important;
+  }
 }
