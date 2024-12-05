@@ -2,8 +2,11 @@
 
 .main-container{
   display: flex;
-  width: 65rem;
+  max-width: 70rem;
   margin: 2rem auto;
+
+  border-bottom: solid 2px $color-border;
+  padding-bottom: 1.2rem;
 }
 
 .sidebar{
@@ -21,12 +24,15 @@
 .search-component{
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
 
   #search-input{
-    padding: 0.3rem 1.4rem;
+    padding: 0.4rem 0.4rem;
+    width: 15rem;
     border: solid 2px $color-border;
     color: $color-text;
+
+    border-radius: 9px;
   }
 
   #select-input{
