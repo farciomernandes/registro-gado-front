@@ -13,6 +13,14 @@ export class InputsLoginComponent {
   }
 
   onSubmit():void {
-    console.log(this.formData)
+    if(this.formData.userName == "admin" && this.formData.password == "admin"){
+      console.log("Usuario logado com sucesso", this.formData)
+
+      localStorage.setItem('user', JSON.stringify(this.formData));
+      window.location.href = '/home';
+    }else{
+      alert("Usuario não existe")
+      return;
+    }
   }
 }
