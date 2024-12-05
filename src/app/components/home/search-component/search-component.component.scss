@@ -1,0 +1,38 @@
+@import "../../../../theme/variables.scss";
+
+.main-container{
+  display: flex;
+  width: 65rem;
+  margin: 2rem auto;
+}
+
+.sidebar{
+  width: 5rem;
+  height: 100%;
+}
+
+.container-child{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.search-component{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  #search-input{
+    padding: 0.3rem 1.4rem;
+    border: solid 2px $color-border;
+    color: $color-text;
+  }
+
+  #select-input{
+    padding: 0.3rem;
+    width: 5rem;
+    border: solid 2px $color-border;
+    font-weight: 500;
+  }
+}

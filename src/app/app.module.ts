@@ -10,6 +10,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { Bell, ChevronDown, CircleUserRound, House, LucideAngularModule, Menu } from 'lucide-angular';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { SearchComponentComponent } from './components/home/search-component/search-component.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     HomeComponent,
     HeaderComponent,
     SidebarComponent,
+    SearchComponentComponent,
   ],
   imports: [
     BrowserModule,
