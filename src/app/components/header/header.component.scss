@@ -7,7 +7,7 @@
 
   padding: 0.8rem 1.2rem;
 
-  border: solid 2px $color-border;
+  border-bottom: solid 2px $color-border;
 }
 
 .menu-and-logo{
@@ -34,6 +34,11 @@
     cursor: pointer;
     display: flex;
     align-items: center;
+    transition: 0.3s;
+
+    &:hover{
+      color: $color-secondary-green;
+    }
   }
 }
 

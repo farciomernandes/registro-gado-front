@@ -8,7 +8,8 @@ import { InputsLoginComponent } from './components/inputs-login/inputs-login.com
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
-import { Bell, ChevronDown, CircleUserRound, LucideAngularModule, Menu } from 'lucide-angular';
+import { Bell, ChevronDown, CircleUserRound, House, LucideAngularModule, Menu } from 'lucide-angular';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +18,13 @@ import { Bell, ChevronDown, CircleUserRound, LucideAngularModule, Menu } from 'l
     InputsLoginComponent,
     HomeComponent,
     HeaderComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    LucideAngularModule.pick({ Menu, Bell, CircleUserRound, ChevronDown })
+    LucideAngularModule.pick({ Menu, Bell, CircleUserRound, ChevronDown, House })
   ],
   providers: [],
   bootstrap: [AppComponent]
