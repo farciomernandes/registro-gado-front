@@ -1,0 +1,64 @@
+@import "../../../theme/variables.scss";
+
+.main-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0.8rem 1.2rem;
+
+  border: solid 2px $color-border;
+}
+
+.menu-and-logo{
+  display: flex;
+  align-items: end;
+  gap: 1.5rem;
+
+  img{
+    width: 8rem;
+  }
+
+  lucide-angular{
+   display: flex;
+   justify-content: end;
+  }
+}
+
+.icons-container{
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+
+  lucide-angular{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.user{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.2rem 0.4rem;
+
+  border: solid 2px $color-border;
+
+  lucide-angular{
+    display: flex;
+    align-items: center;
+  }
+
+  p{
+    font-weight: bolder;
+  }
+}
+
+.user-info{
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+
+  font-size: 0.7rem;
+}
