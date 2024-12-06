@@ -12,6 +12,8 @@ import { Bell, ChevronDown, CircleUserRound, House, LucideAngularModule, Menu } 
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { SearchComponentComponent } from './components/home/search-component/search-component.component';
 import { HomeListComponent } from './components/home/home-list/home-list.component';
+import { ListComponentComponent } from './components/home/home-list/list-component/list-component.component';
+
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { HomeListComponent } from './components/home/home-list/home-list.compone
     SidebarComponent,
     SearchComponentComponent,
     HomeListComponent,
+    ListComponentComponent,
   ],
   imports: [
     BrowserModule,

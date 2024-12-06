@@ -1,0 +1,51 @@
+@import "../../../../../theme/variables.scss";
+
+.sidebar{
+  width: 5rem;
+  height: 100%;
+}
+
+.list{
+  display: flex;
+  align-items: center;
+  width: 70rem;
+  font-size: 0.7rem;
+
+  margin: 0 auto;
+}
+
+.list-container-child{
+  border: solid 2px $color-border;
+  width: 100%;
+}
+
+.info{
+  display: flex;
+  flex-direction: column;
+
+  span{
+    margin-top: 0.4rem;
+  }
+
+  label{
+    margin-bottom: 1rem;
+  }
+}
+
+.list-info{
+  display: flex;
+  gap: 1.4rem;
+  padding: 0.5rem 1rem;
+  justify-content: center;
+}
+
+.line{
+  background-color: black;
+  width: 100%;
+  height: 1px;
+}
+
+.first-span{
+  display: flex;
+  align-items: center;
+}

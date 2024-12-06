@@ -4,8 +4,6 @@
   display: flex;
   max-width: 70rem;
   margin: 2rem auto;
-
-  border-bottom: solid 2px $color-border;
   padding-bottom: 1.2rem;
 }
 
@@ -19,6 +17,12 @@
   justify-content: space-between;
   width: 100%;
   margin: 0 auto;
+
+  border-bottom: solid 2px $color-border;
+
+  .informs{
+    margin-bottom: 1rem;
+  }
 }
 
 .search-component{
