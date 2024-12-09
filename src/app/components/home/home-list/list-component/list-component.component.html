@@ -2,7 +2,7 @@
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <!-- Checkbox Column -->
-    <ng-container matColumnDef="select" class="test">
+    <ng-container matColumnDef="select">
       <th mat-header-cell *matHeaderCellDef>
       </th>
       <td mat-cell *matCellDef="let row">
@@ -11,67 +11,67 @@
     </ng-container>
 
     <!-- Número -->
-    <ng-container matColumnDef="numero" class="test">
+    <ng-container matColumnDef="numero">
       <th mat-header-cell *matHeaderCellDef> Numeração </th>
       <td mat-cell *matCellDef="let row"> {{ row.numero }} </td>
     </ng-container>
 
     <!-- Série -->
-    <ng-container matColumnDef="serie" class="test">
+    <ng-container matColumnDef="serie">
       <th mat-header-cell *matHeaderCellDef> Série </th>
       <td mat-cell *matCellDef="let row"> {{ row.serie }} </td>
     </ng-container>
 
     <!-- Nome do animal -->
-    <ng-container matColumnDef="nome" class="test">
+    <ng-container matColumnDef="nome">
       <th mat-header-cell *matHeaderCellDef> Nome do animal </th>
       <td mat-cell *matCellDef="let row"> {{ row.nome }} </td>
     </ng-container>
 
     <!-- Raça -->
-    <ng-container matColumnDef="raca" class="test">
+    <ng-container matColumnDef="raca">
       <th mat-header-cell *matHeaderCellDef> Raça </th>
       <td mat-cell *matCellDef="let row"> {{ row.raca }} </td>
     </ng-container>
 
     <!-- Pureza -->
-    <ng-container matColumnDef="pureza" class="test">
+    <ng-container matColumnDef="pureza">
       <th mat-header-cell *matHeaderCellDef> Pureza </th>
       <td mat-cell *matCellDef="let row"> {{ row.pureza }} </td>
     </ng-container>
 
     <!-- RDC -->
-    <ng-container matColumnDef="rdc" class="test">
+    <ng-container matColumnDef="rdc">
       <th mat-header-cell *matHeaderCellDef> RDC </th>
       <td mat-cell *matCellDef="let row"> {{ row.rdc }} </td>
     </ng-container>
 
     <!-- Sexo -->
-    <ng-container matColumnDef="sexo" class="test">
+    <ng-container matColumnDef="sexo">
       <th mat-header-cell *matHeaderCellDef> Sexo </th>
       <td mat-cell *matCellDef="let row"> {{ row.sexo }} </td>
     </ng-container>
 
     <!-- Pai -->
-    <ng-container matColumnDef="pai" class="test">
+    <ng-container matColumnDef="pai">
       <th mat-header-cell *matHeaderCellDef> Pai </th>
       <td mat-cell *matCellDef="let row"> {{ row.pai }} </td>
     </ng-container>
 
     <!-- Mãe -->
-    <ng-container matColumnDef="mae" class="test">
+    <ng-container matColumnDef="mae">
       <th mat-header-cell *matHeaderCellDef> Mãe </th>
       <td mat-cell *matCellDef="let row"> {{ row.mae }} </td>
     </ng-container>
 
     <!-- Data de nascimento -->
-    <ng-container matColumnDef="dataNascimento" class="test">
+    <ng-container matColumnDef="dataNascimento">
       <th mat-header-cell *matHeaderCellDef> Data de nascimento </th>
       <td mat-cell *matCellDef="let row"> {{ row.dataNascimento }} </td>
     </ng-container>
 
     <!-- Última vez que pariu -->
-    <ng-container matColumnDef="ultimaParicao" class="test">
+    <ng-container matColumnDef="ultimaParicao">
       <th mat-header-cell *matHeaderCellDef> Última vez que pariu </th>
       <td mat-cell *matCellDef="let row"> {{ row.ultimaParicao }} </td>
     </ng-container>
@@ -80,11 +80,11 @@
     <ng-container matColumnDef="menu">
       <th mat-header-cell *matHeaderCellDef> </th>
       <td mat-cell *matCellDef="let row">
-        <mat-menu #menu="matMenu" class="custom-menu" [matMenuPosition]="'above'">
+        <mat-menu #menu="matMenu" class="custom-menu">
           <button mat-menu-item>Editar</button>
           <button mat-menu-item>Excluir</button>
         </mat-menu>
-        <button mat-icon-button [matMenuTriggerFor]="menu" [matMenuTriggerFor]="menu">
+        <button mat-icon-button [matMenuTriggerFor]="menu" [matMenuTriggerFor]="menu" class="custom-icon-button">
           <mat-icon>...</mat-icon>
         </button>
       </td>
