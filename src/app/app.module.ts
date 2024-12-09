@@ -14,6 +14,12 @@ import { SearchComponentComponent } from './components/home/search-component/sea
 import { HomeListComponent } from './components/home/home-list/home-list.component';
 import { ListComponentComponent } from './components/home/home-list/list-component/list-component.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule } from '@angular/material/table';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +37,13 @@ import { ListComponentComponent } from './components/home/home-list/list-compone
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    LucideAngularModule.pick({ Menu, Bell, CircleUserRound, ChevronDown, House })
+    LucideAngularModule.pick({ Menu, Bell, CircleUserRound, ChevronDown, House }),
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatTableModule,
+    MatMenuModule,
+    MatIconModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

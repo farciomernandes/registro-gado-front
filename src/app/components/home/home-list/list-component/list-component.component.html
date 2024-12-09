@@ -1,73 +1,97 @@
-<div class="list">
-  <div class="sidebar"></div>
-  <div class="list-container-child">
-    <div class="list-info">
-      <!-- Label fixada no topo, sem duplicação -->
-      <div class="info">
-        <label>Numeração</label>
-        <div class="checkbox-container">
-          <input type="checkbox" id="checkbox-input-1">
-          <span class="first-span">12345678</span>
-        </div>
-        <div class="checkbox-container">
-          <input type="checkbox" id="checkbox-input-2">
-          <span class="first-span">23456789</span>
-        </div>
-      </div>
+<div class="table-container">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-      <div class="info">
-        <label>Série</label>
-        <span>12345678</span>
-        <span>12345678</span>
-      </div>
+    <!-- Checkbox Column -->
+    <ng-container matColumnDef="select">
+      <th mat-header-cell *matHeaderCellDef>
+        <mat-checkbox></mat-checkbox>
+      </th>
+      <td mat-cell *matCellDef="let row">
+        <mat-checkbox></mat-checkbox>
+      </td>
+    </ng-container>
 
-      <div class="info">
-        <label>Nome do animal</label>
-        <span>Bernadete</span>
-        <span>Bernadete</span>
-      </div>
+    <!-- Número -->
+    <ng-container matColumnDef="numero">
+      <th mat-header-cell *matHeaderCellDef> Numeração </th>
+      <td mat-cell *matCellDef="let row"> {{ row.numero }} </td>
+    </ng-container>
 
-      <div class="info">
-        <label>Raça</label>
-        <span>Brangus</span>
-        <span>Brangus</span>
-      </div>
+    <!-- Série -->
+    <ng-container matColumnDef="serie">
+      <th mat-header-cell *matHeaderCellDef> Série </th>
+      <td mat-cell *matCellDef="let row"> {{ row.serie }} </td>
+    </ng-container>
 
-      <div class="info">
-        <label>Pureza</label>
-        <span>Exemplo</span>
-        <span>Exemplo</span>
-      </div>
+    <!-- Nome do animal -->
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef> Nome do animal </th>
+      <td mat-cell *matCellDef="let row"> {{ row.nome }} </td>
+    </ng-container>
 
-      <div class="info">
-        <label>RDG</label>
-        <span>AFDCJ</span>
-        <span>AFDCJ</span>
-      </div>
+    <!-- Raça -->
+    <ng-container matColumnDef="raca">
+      <th mat-header-cell *matHeaderCellDef> Raça </th>
+      <td mat-cell *matCellDef="let row"> {{ row.raca }} </td>
+    </ng-container>
 
-      <div class="info">
-        <label>Pai</label>
-        <span>Hereford</span>
-        <span>Hereford</span>
-      </div>
+    <!-- Pureza -->
+    <ng-container matColumnDef="pureza">
+      <th mat-header-cell *matHeaderCellDef> Pureza </th>
+      <td mat-cell *matCellDef="let row"> {{ row.pureza }} </td>
+    </ng-container>
 
-      <div class="info">
-        <label>Mãe</label>
-        <span>Hereford</span>
-        <span>Hereford</span>
-      </div>
+    <!-- RDC -->
+    <ng-container matColumnDef="rdc">
+      <th mat-header-cell *matHeaderCellDef> RDC </th>
+      <td mat-cell *matCellDef="let row"> {{ row.rdc }} </td>
+    </ng-container>
 
-      <div class="info">
-        <label>Data de nascimento</label>
-        <span>Hereford</span>
-        <span>Hereford</span>
-      </div>
+    <!-- Sexo -->
+    <ng-container matColumnDef="sexo">
+      <th mat-header-cell *matHeaderCellDef> Sexo </th>
+      <td mat-cell *matCellDef="let row"> {{ row.sexo }} </td>
+    </ng-container>
 
-      <div class="info">
-        <label>Ultima vez que pariu</label>
-        <span>10 de abril 2024</span>
-        <span>10 de abril 2024</span>
-      </div>
-    </div>
-  </div>
+    <!-- Pai -->
+    <ng-container matColumnDef="pai">
+      <th mat-header-cell *matHeaderCellDef> Pai </th>
+      <td mat-cell *matCellDef="let row"> {{ row.pai }} </td>
+    </ng-container>
+
+    <!-- Mãe -->
+    <ng-container matColumnDef="mae">
+      <th mat-header-cell *matHeaderCellDef> Mãe </th>
+      <td mat-cell *matCellDef="let row"> {{ row.mae }} </td>
+    </ng-container>
+
+    <!-- Data de nascimento -->
+    <ng-container matColumnDef="dataNascimento">
+      <th mat-header-cell *matHeaderCellDef> Data de nascimento </th>
+      <td mat-cell *matCellDef="let row"> {{ row.dataNascimento }} </td>
+    </ng-container>
+
+    <!-- Última vez que pariu -->
+    <ng-container matColumnDef="ultimaParicao">
+      <th mat-header-cell *matHeaderCellDef> Última vez que pariu </th>
+      <td mat-cell *matCellDef="let row"> {{ row.ultimaParicao }} </td>
+    </ng-container>
+
+    <!-- Menu -->
+    <ng-container matColumnDef="menu">
+      <th mat-header-cell *matHeaderCellDef> </th>
+      <td mat-cell *matCellDef="let row">
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>Editar</button>
+          <button mat-menu-item>Excluir</button>
+        </mat-menu>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>...</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
 </div>
