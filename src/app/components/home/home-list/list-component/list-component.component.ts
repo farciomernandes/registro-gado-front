@@ -1,11 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-list-component',
   templateUrl: './list-component.component.html',
   styleUrl: './list-component.component.scss',
+  encapsulation: ViewEncapsulation.None
 })
 export class ListComponentComponent {
+  selectedItems: any[] = [];
+
   displayedColumns: string[] = [
     'select',
     'numero',
@@ -50,4 +53,12 @@ export class ListComponentComponent {
       ultimaParicao: '15 de março 2024',
     },
   ];
+
+  toggleSelection(row: any, event: any) {
+    if (event.checked) {
+      this.selectedItems.push(row);
+    } else {
+      this.selectedItems = this.selectedItems.filter(item => item !== row);
+    }
+  }
 }
