@@ -1,21 +1,21 @@
-<h2>Adicionar um novo Animal</h2>
-<p>Edite os dados necessários</p>
+<h2>Adicionar um Novo Animal</h2>
+<p>Preencha os dados necessários</p>
 
 <form>
   <div class="form-grid">
     <div class="form-group">
       <label for="nome">Nome do Animal</label>
-      <input id="nome" type="text" placeholder="Digite o nome" />
+      <input id="nome" type="text" placeholder="Digite o nome" [(ngModel)]="formData.name" name="name" />
     </div>
 
     <div class="form-group">
       <label for="raca">Raça</label>
-      <input id="raca" type="text" placeholder="Digite a raça" />
+      <input id="raca" type="text" placeholder="Digite a raça" [(ngModel)]="formData.breed" name="breed" />
     </div>
 
     <div class="form-group">
       <label for="sexo">Sexo</label>
-      <select id="sexo">
+      <select id="sexo" [(ngModel)]="formData.gender" name="gender">
         <option value="" disabled selected>Selecione</option>
         <option>Macho</option>
         <option>Fêmea</option>
@@ -24,37 +24,37 @@
 
     <div class="form-group">
       <label for="pureza">Pureza</label>
-      <input id="pureza" type="text" placeholder="Digite a pureza" />
+      <input id="pureza" type="text" placeholder="Digite a pureza" [(ngModel)]="formData.purity" name="purity" />
     </div>
 
     <div class="form-group">
       <label for="dataNascimento">Data de Nascimento</label>
-      <input id="dataNascimento" type="date" />
+      <input id="dataNascimento" type="date" [(ngModel)]="formData.birthDate" name="birthDate" />
     </div>
 
     <div class="form-group">
       <label for="pai">Pai</label>
-      <input id="pai" type="text" placeholder="Digite o pai" />
+      <input id="pai" type="text" placeholder="Digite o pai" [(ngModel)]="formData.father" name="father" />
     </div>
 
     <div class="form-group">
       <label for="mae">Mãe</label>
-      <input id="mae" type="text" placeholder="Digite a mãe" />
+      <input id="mae" type="text" placeholder="Digite a mãe" [(ngModel)]="formData.mother" name="mother" />
     </div>
 
     <div class="form-group">
       <label for="rdc">RDC</label>
-      <input id="rdc" type="text" placeholder="Digite o RDC" />
+      <input id="rdc" type="text" placeholder="Digite o RDC" [(ngModel)]="formData.rdc" name="rdc" />
     </div>
 
     <div class="form-group">
       <label for="serie">Série</label>
-      <input id="serie" type="text" placeholder="Digite a série" />
+      <input id="serie" type="text" placeholder="Digite a série" [(ngModel)]="formData.series" name="series" />
     </div>
 
     <div class="form-group">
       <label for="ultimaParicao">Última Vez Que Pariu</label>
-      <input id="ultimaParicao" type="date" />
+      <input id="ultimaParicao" type="date" [(ngModel)]="formData.lastCalving" name="lastCalving" />
     </div>
   </div>
 

@@ -9,6 +9,19 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class NewAnimalModalComponent {
 
+  formData: any = {
+    name: '', // Animal Name
+    breed: '', // Breed
+    gender: '', // Gender
+    purity: '', // Purity
+    birthDate: '', // Date of Birth
+    father: '', // Father
+    mother: '', // Mother
+    rdc: '', // RDC
+    series: '', // Series
+    lastCalving: '' // Last Calving
+  };
+
   constructor(private dialogRef: MatDialogRef<NewAnimalModalComponent>) {}
 
   onCancel(): void {
@@ -16,6 +29,7 @@ export class NewAnimalModalComponent {
   }
 
   onSubmit(): void {
+    console.log('Form Data:', this.formData);
     this.dialogRef.close();
   }
 }

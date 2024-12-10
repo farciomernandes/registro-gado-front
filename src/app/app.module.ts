@@ -52,7 +52,8 @@ import { EditAnimalModalComponent } from './components/modal/edit-animal-modal/e
     MatTableModule,
     MatMenuModule,
     MatCheckboxModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule
   ],
   providers: [
     provideAnimationsAsync()
