@@ -20,6 +20,16 @@
   }
 }
 
+.clickable-name {
+  color: $color-gray-medium;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.clickable-name:hover {
+  color: $color-secondary-green;
+}
+
 .custom-menu {
   background-color: #f5f5f5;
   border-radius: 8px;

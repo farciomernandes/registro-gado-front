@@ -1,0 +1,50 @@
+<main>
+  <div>
+    <app-header class="header"></app-header>
+    <div class="sidebar">
+      <app-sidebar></app-sidebar>
+    </div>
+
+  </div>
+
+<div class="container-master">
+  <div>
+    <img src="https://quero-ser-veterinario.s3.amazonaws.com/wp-content/uploads/2024/04/destaque-gado-nelore-1024x576.webp" width="320" height="350">
+  </div>
+
+  <div>
+    <div class="icons">
+      <button>
+        <lucide-angular name="network" size="14"></lucide-angular>
+      </button>
+      <button>
+        <lucide-angular name="pen" size="14"></lucide-angular>
+      </button>
+      <button>
+        <lucide-angular name="trash" size="14"></lucide-angular>
+      </button>
+
+    </div>
+
+    <div class="header-info">
+      <h1>Bernadete</h1>
+      <span>Brangus - Exemplo</span>
+      <p>Fêmea - 4 anos</p>
+    </div>
+
+    <div class="inputs">
+      <app-details-creen-inputs [labelName]="'Nome do animal'" [placeholderName]="'Bernadete'"></app-details-creen-inputs>
+      <app-details-creen-inputs [labelName]="'Raça'" [placeholderName]="'Brangus'"></app-details-creen-inputs>
+      <app-details-creen-inputs [labelName]="'Sexo'" [placeholderName]="'Fêmea'"></app-details-creen-inputs>
+      <app-details-creen-inputs [labelName]="'Pureza'" [placeholderName]="'Exemplo'"></app-details-creen-inputs>
+      <app-details-creen-inputs [labelName]="'Numeração'" [placeholderName]="'123456789'"></app-details-creen-inputs>
+      <app-details-creen-inputs [labelName]="'Série'" [placeholderName]="'123456789'"></app-details-creen-inputs>
+      <app-details-creen-inputs [labelName]="'Data de nascimento'" [placeholderName]="'12 de abril 2023'"></app-details-creen-inputs>
+      <app-details-creen-inputs [labelName]="'Última vez que pariu'" [placeholderName]="'12 de abril 2023'"></app-details-creen-inputs>
+      <app-details-creen-inputs [labelName]="'RDG'" [placeholderName]="'AFDCJ'"></app-details-creen-inputs>
+      <app-details-creen-inputs [labelName]="'Pai'" [placeholderName]="'Hereford'"></app-details-creen-inputs>
+      <app-details-creen-inputs [labelName]="'Mãe'" [placeholderName]="'Hereford'"></app-details-creen-inputs>
+    </div>
+  </div>
+</div>
+</main>

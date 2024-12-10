@@ -3,10 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AuthGuard } from '../services/authGuard';
+import { DetailsScreenComponent } from './pages/details-screen/details-screen.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginPageComponent},
   {path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
+  { path: 'details-screen', component: DetailsScreenComponent, canActivate: [AuthGuard]},
   {path: '**', redirectTo: 'login' }
 ];
 

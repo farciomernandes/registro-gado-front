@@ -1,0 +1,75 @@
+@import '../../../theme/variables.scss';
+
+main{
+  width: 100%;
+}
+
+.header{
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  top: 0;
+}
+
+.sidebar{
+  margin-top: 4.9rem;
+}
+
+.container-master{
+  display: flex;
+  align-items: start;
+  gap: 2.5rem;
+  justify-content: center;
+  margin-top: 4rem;
+  padding-top: 2rem;
+
+  img{
+    border-radius: 12px;
+    box-shadow: $color-black ;
+  }
+}
+
+.icons{
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-bottom: 1rem;
+
+  button:first-child{
+    background-color: $color-secondary-green;
+  }
+
+  button{
+    padding: 0.2rem 0.3rem;
+    background-color: $color-border;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+}
+
+.header-info{
+  h1{
+    font-size: 3.2rem;
+    font-weight: bold;
+    color: $color-title;
+  }
+  span{
+    font-size: 1.2rem;
+    font-weight: bolder;
+    color: $color-gray-medium;
+  }
+  p{
+    font-size: 1rem;
+    color: $color-gray-medium;
+    margin-top: 0.2rem;
+  }
+}
+
+.inputs {
+  display: grid;
+  grid-template-columns: repeat(3, 4fr);
+  gap: 16px;
+}
+
+

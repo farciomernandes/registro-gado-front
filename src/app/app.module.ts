@@ -8,7 +8,7 @@ import { InputsLoginComponent } from './components/inputs-login/inputs-login.com
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
-import { Bell, ChevronDown, CircleUserRound, House, LucideAngularModule, Menu } from 'lucide-angular';
+import { Bell, ChevronDown, CircleUserRound, House, LucideAngularModule, Menu, Network, Pen, Trash } from 'lucide-angular';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { SearchComponentComponent } from './components/home/search-component/search-component.component';
 import { HomeListComponent } from './components/home/home-list/home-list.component';
@@ -20,6 +20,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { DetailsScreenComponent } from './pages/details-screen/details-screen.component';
+import { DetailsCreenInputsComponent } from './components/details-creen-inputs/details-creen-inputs.component';
 
 
 @NgModule({
@@ -33,12 +35,14 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     SearchComponentComponent,
     HomeListComponent,
     ListComponentComponent,
+    DetailsScreenComponent,
+    DetailsCreenInputsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    LucideAngularModule.pick({ Menu, Bell, CircleUserRound, ChevronDown, House }),
+    LucideAngularModule.pick({ Menu, Bell, CircleUserRound, ChevronDown, House, Network, Pen, Trash }),
     BrowserModule,
     BrowserAnimationsModule,
     MatTableModule,

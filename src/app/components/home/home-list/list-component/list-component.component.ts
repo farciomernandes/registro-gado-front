@@ -1,4 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-component',
@@ -8,6 +9,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 })
 export class ListComponentComponent {
   selectedItems: any[] = [];
+
 
   displayedColumns: string[] = [
     'select',
@@ -54,11 +56,17 @@ export class ListComponentComponent {
     },
   ];
 
+  constructor(private router: Router) {}
+
   toggleSelection(row: any, event: any) {
     if (event.checked) {
       this.selectedItems.push(row);
     } else {
       this.selectedItems = this.selectedItems.filter(item => item !== row);
     }
+  }
+
+  navigateToDetails(row: any): void {
+    this.router.navigate(['/details-screen'], { queryParams: { id: row.id } });
   }
 }
