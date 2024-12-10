@@ -1,0 +1,40 @@
+@import '../../../theme/variables.scss';
+
+.content{
+  background-color: $color-gray-light;
+  box-shadow: 10px 5px 5px $color-border;
+  width: 13rem;
+  border-radius: 3rem;
+
+  h1{
+    font-size: 1.3rem;
+    font-weight: bolder;
+
+    margin-bottom: 0;
+    padding-top: 0.4rem;
+  }
+
+  span{
+    font-size: 0.7rem;
+  }
+
+}
+
+
+.race{
+  display: flex;
+  width: 12.5rem;
+  position: absolute;
+  justify-content: end;
+
+  span{
+    position: relative;
+    bottom: 0.4rem;
+    background-color: $color-secondary-green;
+    color: $color-white;
+    padding: 0 0.3rem;
+    font-size: 0.6rem;
+
+    border-radius: 0 0 10px 10px;
+  }
+}

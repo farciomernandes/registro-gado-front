@@ -1,3 +1,5 @@
+@import '../../../theme/variables.scss';
+
 .header{
   position: fixed;
   width: 100%;
@@ -7,4 +9,26 @@
 
 .sidebar{
   margin-top: 4.9rem;
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 100%;
+}
+
+.info-component-master{
+  margin: 0 auto;
+  margin-top: 2rem;
+  text-align: center;
+
+  img{
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    padding: 0.4rem;
+    background-color: $color-border;
+  }
 }
