@@ -5,6 +5,8 @@
   width: 100%;
   background-color: white;
   top: 0;
+
+  z-index: 20;
 }
 
 .sidebar{
@@ -32,3 +34,97 @@
     background-color: $color-border;
   }
 }
+
+.tree-elements:first-of-type {
+  margin-top: 0;
+}
+
+.tree-elements{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+
+  margin-top: 5rem;
+}
+
+.country{
+  gap: 20rem;
+}
+
+.info-component-master {
+  position: relative;
+}
+
+
+.tree-item {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2rem; /* Ajuste a altura da linha vertical */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px; /* Espessura da linha */
+    height: 2rem; /* Altura da linha */
+    background-color: #000;
+  }
+}
+
+.tree-line {
+  position: absolute;
+  top: -2rem; /* Ajuste a altura */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px; /* Espessura */
+  height: 2rem; /* Altura da linha */
+  background-color: #000;
+}
+
+
+.tree-item::before {
+  content: '';
+  position: absolute;
+  top: -2rem; /* Ajuste a altura da linha */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px; /* Espessura da linha */
+  height: 2rem; /* Altura da linha até o elemento */
+  background-color: #000;
+}
+
+.tree-elements:nth-child(2) .tree-item.parent-left::after {
+  content: '';
+  position: absolute;
+  top: 150%;
+  left: 47%;
+  width: calc(100% + 2.1rem);
+  height: 2px;
+  background-color: #000;
+  transform: translateX(-50%);
+}
+
+.tree-elements:nth-child(2) .tree-item.parent-right::after {
+  content: '';
+  position: absolute;
+  top: 150%;
+  right: 47%;
+  width: calc(100% + 2.1rem);
+  height: 2px;
+  background-color: #000;
+  transform: translateX(50%);
+}
+
+.tree-elements:nth-child(3) .tree-item.child-left:first-of-type::after {
+  content: '';
+  position: absolute;
+  top: -12.7rem;
+  left: 218%;
+  transform: translateX(-50%);
+  width: calc(100% + 20rem);
+  height: 2px;
+  background-color: #000;
+}
+
+

@@ -74,7 +74,7 @@ export class ListComponentComponent {
 
   openNewAnimalModal(): void {
     this.dialog.open(EditAnimalModalComponent, {
-      width: '40rem',
+      width: '42rem',
     });
   }
 }

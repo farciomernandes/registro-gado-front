@@ -12,7 +12,7 @@ export class HomeListComponent {
 
   openNewAnimalModal(): void {
     this.dialog.open(NewAnimalModalComponent, {
-      width: '40rem',
+      width: '42rem',
     });
   }
 }

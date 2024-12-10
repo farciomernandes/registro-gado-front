@@ -2,15 +2,48 @@
   <div>
     <app-header class="header"></app-header>
     <div class="sidebar">
-      <app-sidebar></app-sidebar>
+      <app-sidebar class="sidebar"></app-sidebar>
     </div>
   </div>
 
   <div class="content">
     <div class="info-component-master">
-      <img src="https://primaza.com.br/wp-content/uploads/2020/05/aplicar-brincos-gado.jpg.webp" alt="">
+      <!-- Primeira linha -->
+      <div class="tree-elements">
+        <div>
+          <img src="https://primaza.com.br/wp-content/uploads/2020/05/aplicar-brincos-gado.jpg.webp" alt="">
+          <app-family-tree-buttons></app-family-tree-buttons>
+        </div>
+      </div>
 
-      <app-family-tree-buttons></app-family-tree-buttons>
+      <!-- Segunda linha -->
+      <div class="tree-elements country">
+        <div class="tree-item parent-left">
+          <app-family-tree-buttons></app-family-tree-buttons>
+        </div>
+        <div class="tree-item parent-right">
+          <app-family-tree-buttons></app-family-tree-buttons>
+        </div>
+      </div>
+
+      <!-- Terceira linha -->
+      <div class="tree-elements">
+        <!-- Conexões da esquerda -->
+        <div class="tree-item child-left">
+          <app-family-tree-buttons></app-family-tree-buttons>
+        </div>
+        <div class="tree-item child-left">
+          <app-family-tree-buttons></app-family-tree-buttons>
+        </div>
+
+        <!-- Conexões da direita -->
+        <div class="tree-item child-right">
+          <app-family-tree-buttons></app-family-tree-buttons>
+        </div>
+        <div class="tree-item child-right">
+          <app-family-tree-buttons></app-family-tree-buttons>
+        </div>
+      </div>
     </div>
   </div>
 </main>
