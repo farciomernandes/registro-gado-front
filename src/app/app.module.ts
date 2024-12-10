@@ -24,6 +24,8 @@ import { DetailsScreenComponent } from './pages/details-screen/details-screen.co
 import { DetailsCreenInputsComponent } from './components/details-creen-inputs/details-creen-inputs.component';
 import { NewAnimalModalComponent } from './components/modal/new-animal-modal/new-animal-modal.component';
 import { EditAnimalModalComponent } from './components/modal/edit-animal-modal/edit-animal-modal.component';
+import { FamilyTreeComponent } from './pages/family-tree/family-tree.component';
+import { FamilyTreeButtonsComponent } from './components/family-tree-buttons/family-tree-buttons.component';
 
 
 @NgModule({
@@ -41,6 +43,8 @@ import { EditAnimalModalComponent } from './components/modal/edit-animal-modal/e
     DetailsCreenInputsComponent,
     NewAnimalModalComponent,
     EditAnimalModalComponent,
+    FamilyTreeComponent,
+    FamilyTreeButtonsComponent,
   ],
   imports: [
     BrowserModule,
