@@ -1,0 +1,65 @@
+<h2>Editar Animal</h2>
+<p>Edite os dados necessários</p>
+
+<form>
+  <div class="form-grid">
+    <div class="form-group">
+      <label for="nome">Nome do Animal</label>
+      <input id="nome" type="text" placeholder="Digite o nome" />
+    </div>
+
+    <div class="form-group">
+      <label for="raca">Raça</label>
+      <input id="raca" type="text" placeholder="Digite a raça" />
+    </div>
+
+    <div class="form-group">
+      <label for="sexo">Sexo</label>
+      <select id="sexo">
+        <option value="" disabled selected>Selecione</option>
+        <option>Macho</option>
+        <option>Fêmea</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="pureza">Pureza</label>
+      <input id="pureza" type="text" placeholder="Digite a pureza" />
+    </div>
+
+    <div class="form-group">
+      <label for="dataNascimento">Data de Nascimento</label>
+      <input id="dataNascimento" type="date" />
+    </div>
+
+    <div class="form-group">
+      <label for="pai">Pai</label>
+      <input id="pai" type="text" placeholder="Digite o pai" />
+    </div>
+
+    <div class="form-group">
+      <label for="mae">Mãe</label>
+      <input id="mae" type="text" placeholder="Digite a mãe" />
+    </div>
+
+    <div class="form-group">
+      <label for="rdc">RDC</label>
+      <input id="rdc" type="text" placeholder="Digite o RDC" />
+    </div>
+
+    <div class="form-group">
+      <label for="serie">Série</label>
+      <input id="serie" type="text" placeholder="Digite a série" />
+    </div>
+
+    <div class="form-group">
+      <label for="ultimaParicao">Última Vez Que Pariu</label>
+      <input id="ultimaParicao" type="date" />
+    </div>
+  </div>
+
+  <div class="modal-actions">
+    <button type="button" (click)="onCancel()">Cancelar</button>
+    <button type="submit" (click)="onSubmit()">Editar</button>
+  </div>
+</form>

@@ -1,5 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { EditAnimalModalComponent } from '../../../modal/edit-animal-modal/edit-animal-modal.component';
 
 @Component({
   selector: 'app-list-component',
@@ -56,7 +58,7 @@ export class ListComponentComponent {
     },
   ];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, public dialog: MatDialog) {}
 
   toggleSelection(row: any, event: any) {
     if (event.checked) {
@@ -68,5 +70,11 @@ export class ListComponentComponent {
 
   navigateToDetails(row: any): void {
     this.router.navigate(['/details-screen'], { queryParams: { id: row.id } });
+  }
+
+  openNewAnimalModal(): void {
+    this.dialog.open(EditAnimalModalComponent, {
+      width: '40rem',
+    });
   }
 }

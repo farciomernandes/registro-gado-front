@@ -22,6 +22,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { DetailsScreenComponent } from './pages/details-screen/details-screen.component';
 import { DetailsCreenInputsComponent } from './components/details-creen-inputs/details-creen-inputs.component';
+import { NewAnimalModalComponent } from './components/modal/new-animal-modal/new-animal-modal.component';
+import { EditAnimalModalComponent } from './components/modal/edit-animal-modal/edit-animal-modal.component';
 
 
 @NgModule({
@@ -37,6 +39,8 @@ import { DetailsCreenInputsComponent } from './components/details-creen-inputs/d
     ListComponentComponent,
     DetailsScreenComponent,
     DetailsCreenInputsComponent,
+    NewAnimalModalComponent,
+    EditAnimalModalComponent,
   ],
   imports: [
     BrowserModule,
