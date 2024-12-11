@@ -1,0 +1,40 @@
+{
+  "animals": [
+    {
+      "id": 1,
+      "name": "Rex",
+      "numeration": "001",
+      "serie": "A123",
+      "breed": "Pastor Alemão",
+      "purity": "Pure",
+      "RGD": "tipo_cpf_do_bixo",
+      "sex": "Male",
+      "father": "Animal Name 1",
+      "id_father": 10,
+      "mother": "Animal Name 2",
+      "id_mother": 15,
+      "last_breeding": "2024-06-01",
+      "registered_with_government": true,
+      "receive_notifications": true,
+      "image_url": "https://example.com/images/rex.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Bella",
+      "numeration": "002",
+      "serie": "B456",
+      "breed": "Labrador",
+      "purity": "Mixed",
+      "RGD": "tipo_cpf_do_bixo",
+      "sex": "Female",
+      "father": "Animal Name 3",
+      "id_father": 20,
+      "mother": "Animal Name 4",
+      "id_mother": 25,
+      "last_breeding": "2023-05-15",
+      "registered_with_government": true,
+      "receive_notifications": false,
+      "image_url": "https://example.com/images/bella.jpg"
+    }
+  ]
+}

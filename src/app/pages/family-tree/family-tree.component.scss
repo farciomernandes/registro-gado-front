@@ -21,9 +21,38 @@
   width: 100%;
 }
 
+.title{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+
+  padding-top: 2rem;
+
+  width: 40rem;
+  margin-left: 6rem;
+
+  h1{
+    margin-bottom: 0.7rem;
+    font-size: 2.7rem;
+    font-weight: bolder;
+    color: $color-title;
+  }
+
+  span{
+    font-size: 1.2rem;
+    color: $color-text;
+    font-weight: bolder;
+  }
+
+  lucide-icon{
+    background-color: $color-secondary-green;
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+  }
+}
+
 .info-component-master{
   margin: 0 auto;
-  margin-top: 2rem;
   text-align: center;
 
   img{
