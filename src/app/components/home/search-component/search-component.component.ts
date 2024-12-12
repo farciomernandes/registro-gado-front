@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-search-component',
@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrl: './search-component.component.scss'
 })
 export class SearchComponentComponent {
+  filterValue: string = '';
+  filterField: string = '';
 
+  @Output() searchCriteriaChange = new EventEmitter<{ field: string, value: string }>();
+
+  onSearchChange(): void {
+    this.searchCriteriaChange.emit({ field: this.filterField, value: this.filterValue });
+  }
 }

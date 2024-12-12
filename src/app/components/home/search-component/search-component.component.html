@@ -6,9 +6,9 @@
     </div>
 
     <div class="search-component">
-      <input type="search" placeholder="Buscar" id="search-input">
+      <input type="search" placeholder="Buscar" id="search-input" [(ngModel)]="filterValue" (input)="onSearchChange()">
 
-      <select id="select-input">
+      <select id="select-input" [(ngModel)]="filterField" (change)="onSearchChange()">
         <option value="" disabled selected>Filtrar</option>
         <option>Serie</option>
         <option>Nome</option>

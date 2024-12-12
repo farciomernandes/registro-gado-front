@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
+  searchCriteria: { field: string; value: string } | null = null;
 
+  onSearchCriteriaChange(criteria: { field: string; value: string }) {
+    this.searchCriteria = criteria;
+  }
 }

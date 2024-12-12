@@ -12,7 +12,7 @@ import { Bell, ChevronDown, CircleUserRound, House, LucideAngularModule, Menu, N
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { SearchComponentComponent } from './components/home/search-component/search-component.component';
 import { HomeListComponent } from './components/home/home-list/home-list.component';
-import { ListComponentComponent } from './components/home/home-list/list-component/list-component.component';
+import { ListComponentComponent } from './components/home/list-component/list-component.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';

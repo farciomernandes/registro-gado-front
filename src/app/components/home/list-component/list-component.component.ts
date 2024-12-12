@@ -1,7 +1,7 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { EditAnimalModalComponent } from '../../../modal/edit-animal-modal/edit-animal-modal.component';
+import { EditAnimalModalComponent } from '../../modal/edit-animal-modal/edit-animal-modal.component';
 
 @Component({
   selector: 'app-list-component',
@@ -9,9 +9,9 @@ import { EditAnimalModalComponent } from '../../../modal/edit-animal-modal/edit-
   styleUrl: './list-component.component.scss',
   encapsulation: ViewEncapsulation.None
 })
-export class ListComponentComponent {
+export class ListComponentComponent  {
+  @Input() searchCriteria: { field: string; value: string } | null = null;
   selectedItems: any[] = [];
-
 
   displayedColumns: string[] = [
     'select',
@@ -29,7 +29,7 @@ export class ListComponentComponent {
     'menu',
   ];
 
-  dataSource = [
+  originalDataSource = [
     {
       numero: '123456789',
       serie: '123456789',
@@ -58,6 +58,8 @@ export class ListComponentComponent {
     },
   ];
 
+  dataSource = [...this.originalDataSource];
+
   constructor(private router: Router, public dialog: MatDialog) {}
 
   toggleSelection(row: any, event: any) {
@@ -75,6 +77,27 @@ export class ListComponentComponent {
   openNewAnimalModal(): void {
     this.dialog.open(EditAnimalModalComponent, {
       width: '42rem',
+    });
+  }
+
+  onSearchCriteriaChange(criteria: { field: string, value: string }) {
+    const { field, value } = criteria;
+
+    if (!value) {
+      this.dataSource = [...this.originalDataSource];
+      return;
+    }
+
+    this.dataSource = this.originalDataSource.filter(item => {
+      if (!field) {
+        // Busca em todos os campos
+        return Object.values(item).some(val =>
+          val?.toString().toLowerCase().includes(value.toLowerCase())
+        );
+      }
+
+      // Type assertion para indicar que 'field' é uma chave válida
+      return item[field as keyof typeof item]?.toString().toLowerCase().includes(value.toLowerCase());
     });
   }
 }
