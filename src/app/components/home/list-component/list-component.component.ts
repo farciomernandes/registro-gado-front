@@ -1,4 +1,4 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnChanges, ViewEncapsulation } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { EditAnimalModalComponent } from '../../modal/edit-animal-modal/edit-animal-modal.component';
@@ -9,7 +9,7 @@ import { EditAnimalModalComponent } from '../../modal/edit-animal-modal/edit-ani
   styleUrl: './list-component.component.scss',
   encapsulation: ViewEncapsulation.None
 })
-export class ListComponentComponent  {
+export class ListComponentComponent implements OnChanges {
   @Input() searchCriteria: { field: string; value: string } | null = null;
   selectedItems: any[] = [];
 
@@ -99,5 +99,27 @@ export class ListComponentComponent  {
       // Type assertion para indicar que 'field' é uma chave válida
       return item[field as keyof typeof item]?.toString().toLowerCase().includes(value.toLowerCase());
     });
+  }
+
+  ngOnChanges() {
+    if (this.searchCriteria) {
+      const { field, value } = this.searchCriteria;
+
+      if (!value) {
+        this.dataSource = [...this.originalDataSource];
+        return;
+      }
+
+      this.dataSource = this.originalDataSource.filter(item => {
+        if (!field) {
+          // Busca em todos os campos
+          return Object.values(item).some(val =>
+            val?.toString().toLowerCase().includes(value.toLowerCase())
+          );
+        }
+
+        return item[field as keyof typeof item]?.toString().toLowerCase().includes(value.toLowerCase());
+      });
+    }
   }
 }

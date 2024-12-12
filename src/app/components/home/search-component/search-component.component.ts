@@ -11,6 +11,7 @@ export class SearchComponentComponent {
 
   @Output() searchCriteriaChange = new EventEmitter<{ field: string, value: string }>();
 
+
   onSearchChange(): void {
     this.searchCriteriaChange.emit({ field: this.filterField, value: this.filterValue });
   }

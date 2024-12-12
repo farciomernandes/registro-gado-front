@@ -1,3 +1,5 @@
+<app-search-component (searchCriteriaChange)="onSearchCriteriaChange($event)"></app-search-component>
+
 <div class="main-container">
   <div class="header">
     <div class="container-child-header">
@@ -31,4 +33,4 @@
   </div>
 </div>
 
-<app-list-component></app-list-component>
+<app-list-component [searchCriteria]="searchCriteria"></app-list-component>

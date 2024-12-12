@@ -10,6 +10,13 @@ import { MatDialog } from '@angular/material/dialog';
 export class HomeListComponent {
   constructor(public dialog: MatDialog) {}
 
+  searchCriteria: { field: string; value: string } | null = null;
+
+  onSearchCriteriaChange(criteria: { field: string; value: string }) {
+    this.searchCriteria = criteria;
+    console.log('Critério de busca atualizado:', this.searchCriteria);
+  }
+
   openNewAnimalModal(): void {
     this.dialog.open(NewAnimalModalComponent, {
       width: '42rem',
