@@ -16,46 +16,10 @@
       "last_breeding": "2024-06-01",
       "registered_with_government": true,
       "receive_notifications": true,
-      "image_url": "https://example.com/images/rex.jpg",
-      "genealogy": {
-        "father": {
-          "id": 10,
-          "name": "Animal Name 1"
-        },
-        "mother": {
-          "id": 15,
-          "name": "Animal Name 2"
-        },
-        "children": [
-          {
-            "id": 20,
-            "name": "Filho 1",
-            "father": {
-              "id": 1,
-              "name": "Rex"
-            },
-            "mother": {
-              "id": 25,
-              "name": "Mãe do Filho 1"
-            }
-          },
-          {
-            "id": 21,
-            "name": "Filho 2",
-            "father": {
-              "id": 1,
-              "name": "Rex"
-            },
-            "mother": {
-              "id": 30,
-              "name": "Mãe do Filho 2"
-            }
-          }
-        ]
-      }
+      "image_url": "https://example.com/images/rex.jpg"
     },
     {
-      "id": 2,
+      "id": 5,
       "name": "Bella",
       "numeration": "002",
       "serie": "B456",
@@ -70,18 +34,7 @@
       "last_breeding": "2023-05-15",
       "registered_with_government": true,
       "receive_notifications": false,
-      "image_url": "https://example.com/images/bella.jpg",
-      "genealogy": {
-        "father": {
-          "id": 20,
-          "name": "Animal Name 3"
-        },
-        "mother": {
-          "id": 25,
-          "name": "Animal Name 4"
-        },
-        "children": []
-      }
+      "image_url": "https://example.com/images/bella.jpg"
     }
   ]
 }

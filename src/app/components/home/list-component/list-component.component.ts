@@ -2,6 +2,7 @@ import { Component, Input, OnChanges, ViewEncapsulation } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { EditAnimalModalComponent } from '../../modal/edit-animal-modal/edit-animal-modal.component';
+import { AnimalService } from '../../../services/animal.service';
 
 @Component({
   selector: 'app-list-component',
@@ -13,60 +14,53 @@ export class ListComponentComponent implements OnChanges {
   @Input() searchCriteria: { field: string; value: string } | null = null;
   selectedItems: any[] = [];
 
-  displayedColumns: string[] = [
+  displayedColumns = [
     'select',
-    'numero',
+    'numeration',
     'serie',
-    'nome',
-    'raca',
-    'pureza',
-    'rdc',
-    'sexo',
-    'pai',
-    'mae',
-    'dataNascimento',
-    'ultimaParicao',
-    'menu',
+    'name',
+    'breed',
+    'purity',
+    'registered_with_government',
+    'sex',
+    'father',
+    'mother',
+    'last_breeding',
+    'menu'
   ];
 
-  originalDataSource = [
-    {
-      numero: '123456789',
-      serie: '123456789',
-      nome: 'Bernadete',
-      raca: 'Brangus',
-      pureza: 'Exemplo',
-      rdc: 'AFDCJ',
-      sexo: 'Fêmea',
-      pai: 'Hereford',
-      mae: 'Hereford',
-      dataNascimento: '12 de abril 2023',
-      ultimaParicao: '10 de abril 2024',
-    },
-    {
-      numero: '987654321',
-      serie: '987654321',
-      nome: 'Joana',
-      raca: 'Angus',
-      pureza: 'Puro',
-      rdc: 'DFGJK',
-      sexo: 'Fêmea',
-      pai: 'Hereford',
-      mae: 'Hereford',
-      dataNascimento: '10 de janeiro 2023',
-      ultimaParicao: '15 de março 2024',
-    },
-  ];
+  originalDataSource: any[] = [];
 
-  dataSource = [...this.originalDataSource];
+  dataSource: any[] = [];
 
-  constructor(private router: Router, public dialog: MatDialog) {}
+  constructor(
+    private router: Router,
+    public dialog: MatDialog,
+    private animalService: AnimalService
+  ) {}
+
+  ngOnInit() {
+    this.loadAnimals();
+  }
+
+  loadAnimals() {
+    this.animalService.getAnimals().subscribe(
+      (data) => {
+        console.log('Dados carregados da API:', data); // Adicione este log
+        this.originalDataSource = data;
+        this.dataSource = [...this.originalDataSource];
+      },
+      (error) => {
+        console.error('Erro ao carregar os animais:', error); // Adicione este log para erros
+      }
+    );
+  }
 
   toggleSelection(row: any, event: any) {
     if (event.checked) {
       this.selectedItems.push(row);
     } else {
-      this.selectedItems = this.selectedItems.filter(item => item !== row);
+      this.selectedItems = this.selectedItems.filter((item) => item !== row);
     }
   }
 
@@ -80,7 +74,7 @@ export class ListComponentComponent implements OnChanges {
     });
   }
 
-  onSearchCriteriaChange(criteria: { field: string, value: string }) {
+  onSearchCriteriaChange(criteria: { field: string; value: string }) {
     const { field, value } = criteria;
 
     if (!value) {
@@ -88,16 +82,17 @@ export class ListComponentComponent implements OnChanges {
       return;
     }
 
-    this.dataSource = this.originalDataSource.filter(item => {
+    this.dataSource = this.originalDataSource.filter((item) => {
       if (!field) {
-        // Busca em todos os campos
-        return Object.values(item).some(val =>
+        return Object.values(item).some((val) =>
           val?.toString().toLowerCase().includes(value.toLowerCase())
         );
       }
 
-      // Type assertion para indicar que 'field' é uma chave válida
-      return item[field as keyof typeof item]?.toString().toLowerCase().includes(value.toLowerCase());
+      return item[field as keyof typeof item]
+        ?.toString()
+        .toLowerCase()
+        .includes(value.toLowerCase());
     });
   }
 
@@ -110,15 +105,17 @@ export class ListComponentComponent implements OnChanges {
         return;
       }
 
-      this.dataSource = this.originalDataSource.filter(item => {
+      this.dataSource = this.originalDataSource.filter((item) => {
         if (!field) {
-          // Busca em todos os campos
-          return Object.values(item).some(val =>
+          return Object.values(item).some((val) =>
             val?.toString().toLowerCase().includes(value.toLowerCase())
           );
         }
 
-        return item[field as keyof typeof item]?.toString().toLowerCase().includes(value.toLowerCase());
+        return item[field as keyof typeof item]
+          ?.toString()
+          .toLowerCase()
+          .includes(value.toLowerCase());
       });
     }
   }

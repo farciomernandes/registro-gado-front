@@ -26,6 +26,7 @@ import { NewAnimalModalComponent } from './components/modal/new-animal-modal/new
 import { EditAnimalModalComponent } from './components/modal/edit-animal-modal/edit-animal-modal.component';
 import { FamilyTreeComponent } from './pages/family-tree/family-tree.component';
 import { FamilyTreeButtonsComponent } from './components/family-tree-buttons/family-tree-buttons.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -57,7 +58,8 @@ import { FamilyTreeButtonsComponent } from './components/family-tree-buttons/fam
     MatMenuModule,
     MatCheckboxModule,
     MatIconModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     provideAnimationsAsync()
