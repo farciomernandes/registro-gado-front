@@ -14,9 +14,10 @@
       "mother": "Animal Name 2",
       "id_mother": 15,
       "last_breeding": "2024-06-01",
+      "birthDate": "2024-05-01",
       "registered_with_government": true,
       "receive_notifications": true,
-      "image_url": "https://example.com/images/rex.jpg"
+      "image_url": "https://primaza.com.br/wp-content/uploads/2020/05/aplicar-brincos-gado.jpg.webp"
     },
     {
       "id": 5,
@@ -32,9 +33,10 @@
       "mother": "Animal Name 4",
       "id_mother": 25,
       "last_breeding": "2023-05-15",
+      "birthDate": "2024-05-01",
       "registered_with_government": true,
       "receive_notifications": false,
-      "image_url": "https://example.com/images/bella.jpg"
+      "image_url": "https://primaza.com.br/wp-content/uploads/2020/05/aplicar-brincos-gado.jpg.webp"
     }
   ]
 }

@@ -4,47 +4,45 @@
     <div class="sidebar">
       <app-sidebar></app-sidebar>
     </div>
-
   </div>
 
-<div class="container-master">
-  <div>
-    <img src="https://primaza.com.br/wp-content/uploads/2020/05/aplicar-brincos-gado.jpg.webp" width="320" height="330">
+  <div class="container-master" *ngIf="animal">
+    <div>
+      <img [src]="animal.image_url" width="320" height="330" alt="Foto do animal" />
+    </div>
+
+    <div>
+      <div class="icons">
+        <button routerLink="/family-tree">
+          <lucide-angular name="network" size="14"></lucide-angular>
+        </button>
+        <button (click)="openNewAnimalModal()">
+          <lucide-angular name="pen" size="14"></lucide-angular>
+        </button>
+        <button>
+          <lucide-angular name="trash" size="14"></lucide-angular>
+        </button>
+      </div>
+
+      <div class="header-info">
+        <h1>{{ animal.name }}</h1>
+        <span>{{ animal.breed }} - {{ animal.purity }}</span>
+        <p>{{ animal.gender }} - {{ animal.age }} anos</p>
+      </div>
+
+      <div class="inputs">
+        <app-details-creen-inputs [labelName]="'Nome do animal'" [placeholderName]="animal.name"></app-details-creen-inputs>
+        <app-details-creen-inputs [labelName]="'Raça'" [placeholderName]="animal.breed"></app-details-creen-inputs>
+        <app-details-creen-inputs [labelName]="'Sexo'" [placeholderName]="animal.sex"></app-details-creen-inputs>
+        <app-details-creen-inputs [labelName]="'Pureza'" [placeholderName]="animal.purity"></app-details-creen-inputs>
+        <app-details-creen-inputs [labelName]="'Numeração'" [placeholderName]="animal.numeration"></app-details-creen-inputs>
+        <app-details-creen-inputs [labelName]="'Série'" [placeholderName]="animal.serie"></app-details-creen-inputs>
+        <app-details-creen-inputs [labelName]="'Data de nascimento'" [placeholderName]="animal.birthDate"></app-details-creen-inputs>
+        <app-details-creen-inputs [labelName]="'Última vez que pariu'" [placeholderName]="animal.last_breeding"></app-details-creen-inputs>
+        <app-details-creen-inputs [labelName]="'RDG'" [placeholderName]="animal.RGD"></app-details-creen-inputs>
+        <app-details-creen-inputs [labelName]="'Pai'" [placeholderName]="animal.father"></app-details-creen-inputs>
+        <app-details-creen-inputs [labelName]="'Mãe'" [placeholderName]="animal.mother"></app-details-creen-inputs>
+      </div>
+    </div>
   </div>
-
-  <div>
-    <div class="icons">
-      <button routerLink="/family-tree">
-        <lucide-angular name="network" size="14"></lucide-angular>
-      </button>
-      <button (click)="openNewAnimalModal()">
-        <lucide-angular name="pen" size="14"></lucide-angular>
-      </button>
-      <button>
-        <lucide-angular name="trash" size="14"></lucide-angular>
-      </button>
-
-    </div>
-
-    <div class="header-info">
-      <h1>Bernadete</h1>
-      <span>Brangus - Exemplo</span>
-      <p>Fêmea - 4 anos</p>
-    </div>
-
-    <div class="inputs">
-      <app-details-creen-inputs [labelName]="'Nome do animal'" [placeholderName]="'Bernadete'"></app-details-creen-inputs>
-      <app-details-creen-inputs [labelName]="'Raça'" [placeholderName]="'Brangus'"></app-details-creen-inputs>
-      <app-details-creen-inputs [labelName]="'Sexo'" [placeholderName]="'Fêmea'"></app-details-creen-inputs>
-      <app-details-creen-inputs [labelName]="'Pureza'" [placeholderName]="'Exemplo'"></app-details-creen-inputs>
-      <app-details-creen-inputs [labelName]="'Numeração'" [placeholderName]="'123456789'"></app-details-creen-inputs>
-      <app-details-creen-inputs [labelName]="'Série'" [placeholderName]="'123456789'"></app-details-creen-inputs>
-      <app-details-creen-inputs [labelName]="'Data de nascimento'" [placeholderName]="'12 de abril 2023'"></app-details-creen-inputs>
-      <app-details-creen-inputs [labelName]="'Última vez que pariu'" [placeholderName]="'12 de abril 2023'"></app-details-creen-inputs>
-      <app-details-creen-inputs [labelName]="'RDG'" [placeholderName]="'AFDCJ'"></app-details-creen-inputs>
-      <app-details-creen-inputs [labelName]="'Pai'" [placeholderName]="'Hereford'"></app-details-creen-inputs>
-      <app-details-creen-inputs [labelName]="'Mãe'" [placeholderName]="'Hereford'"></app-details-creen-inputs>
-    </div>
-  </div>
-</div>
 </main>
