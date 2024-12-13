@@ -13,7 +13,7 @@
 
     <div>
       <div class="icons">
-        <button routerLink="/family-tree">
+        <button routerLink="/family-tree" [queryParams]="{ id: animal.id }">
           <lucide-angular name="network" size="14"></lucide-angular>
         </button>
         <button (click)="openNewAnimalModal()">
@@ -27,7 +27,7 @@
       <div class="header-info">
         <h1>{{ animal.name }}</h1>
         <span>{{ animal.breed }} - {{ animal.purity }}</span>
-        <p>{{ animal.gender }} - {{ animal.age }} anos</p>
+        <p>{{ animal.gender }} {{ animal.age }} anos</p>
       </div>
 
       <div class="inputs">
