@@ -120,4 +120,14 @@ export class ListComponentComponent implements OnChanges {
       });
     }
   }
+
+  deleteAnimal(id: string) {
+    this.animalService.deleteAnimal(id)?.subscribe({
+      next: () => {
+        alert('Animal excluído com sucesso!');
+        this.loadAnimals();
+      },
+      error: () => alert('Erro ao excluir o animal.')
+    });
+  }
 }
