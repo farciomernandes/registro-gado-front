@@ -1,4 +1,4 @@
 export const environment = {
   product: false,
-  apiUrl: "http://localhost:8080"
+  apiUrl: "https://registro-de-gado-backend.onrender.com"
 }
