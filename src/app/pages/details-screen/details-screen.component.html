@@ -19,7 +19,7 @@
         <button (click)="openNewAnimalModal()">
           <lucide-angular name="pen" size="14"></lucide-angular>
         </button>
-        <button>
+        <button (click)="deleteAnimal()">
           <lucide-angular name="trash" size="14"></lucide-angular>
         </button>
       </div>
@@ -38,10 +38,10 @@
         <app-details-creen-inputs [labelName]="'Numeração'" [placeholderName]="animal.numeration"></app-details-creen-inputs>
         <app-details-creen-inputs [labelName]="'Série'" [placeholderName]="animal.serie"></app-details-creen-inputs>
         <app-details-creen-inputs [labelName]="'Data de nascimento'" [placeholderName]="animal.birthDate"></app-details-creen-inputs>
-        <app-details-creen-inputs [labelName]="'Última vez que pariu'" [placeholderName]="animal.last_breeding"></app-details-creen-inputs>
-        <app-details-creen-inputs [labelName]="'RDG'" [placeholderName]="animal.RGD"></app-details-creen-inputs>
-        <app-details-creen-inputs [labelName]="'Pai'" [placeholderName]="animal.father"></app-details-creen-inputs>
-        <app-details-creen-inputs [labelName]="'Mãe'" [placeholderName]="animal.mother"></app-details-creen-inputs>
+        <app-details-creen-inputs [labelName]="'Última vez que pariu'" [placeholderName]="animal.lastBreeding"></app-details-creen-inputs>
+        <app-details-creen-inputs [labelName]="'RDG'" [placeholderName]="animal.rdg"></app-details-creen-inputs>
+        <app-details-creen-inputs [labelName]="'Pai'" [placeholderName]="animal.fatherName ? animal.fatherName : 'RM1'"></app-details-creen-inputs>
+        <app-details-creen-inputs [labelName]="'Mãe'" [placeholderName]="animal.motherName ? animal.motherName : 'RM1'"></app-details-creen-inputs>
       </div>
     </div>
   </div>

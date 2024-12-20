@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EditAnimalModalComponent } from '../../components/modal/edit-animal-modal/edit-animal-modal.component';
 import { MatDialog } from '@angular/material/dialog';
 import { AnimalService } from '../../services/animal.service';
@@ -13,7 +13,7 @@ export class DetailsScreenComponent {
   id: string = '';
   animal: any = null;
 
-  constructor(private route: ActivatedRoute, public dialog: MatDialog, private animalService: AnimalService) {}
+  constructor(private route: ActivatedRoute, public dialog: MatDialog, private animalService: AnimalService, private router: Router) {}
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
@@ -40,5 +40,22 @@ export class DetailsScreenComponent {
     this.dialog.open(EditAnimalModalComponent, {
       width: '40rem',
     });
+  }
+
+  deleteAnimal(): void {
+    if (this.id) {
+      this.animalService.deleteAnimal(this.id)?.subscribe({
+        next: () => {
+          alert('Animal excluído com sucesso!');
+          this.router.navigate(['/home']);
+        },
+        error: (err) => {
+          console.error('Erro ao excluir o animal:', err);
+          alert('Erro ao excluir o animal.');
+        }
+      });
+    } else {
+      alert('ID do animal não encontrado!');
+    }
   }
 }
