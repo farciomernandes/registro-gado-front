@@ -25,6 +25,7 @@ export class ListComponentComponent implements OnChanges {
     'sex',
     'father',
     'mother',
+    'birthDate',
     'last_breeding',
     'menu'
   ];

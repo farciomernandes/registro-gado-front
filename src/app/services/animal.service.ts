@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AnimalService {
-  private apiUrl = `${environment.apiUrl}/animals`;
+  private apiUrl = `${environment.apiUrl}/animal`;
 
   constructor(private http: HttpClient) {}
 
@@ -19,5 +19,17 @@ export class AnimalService {
     const url = `${this.apiUrl}/${id}`
 
     return this.http.get<any>(url);
+  }
+
+  addAnimal(animalData: any): Observable<any> {
+    const payload = {
+      ...animalData,
+      motherName: animalData.mother || '',
+      fatherName: animalData.father || '',
+      registeredWithGovernment: false,
+      receiveNotifications: false,
+    };
+
+    return this.http.post<any>(this.apiUrl, payload);
   }
 }
