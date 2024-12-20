@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { AnimalService } from '../../../services/animal.service';
 
@@ -8,7 +8,7 @@ import { AnimalService } from '../../../services/animal.service';
   templateUrl: './new-animal-modal.component.html',
   styleUrl: './new-animal-modal.component.scss'
 })
-export class NewAnimalModalComponent {
+export class NewAnimalModalComponent implements OnInit {
 
   formData: any = {
     name: '', // Animal Name
@@ -24,7 +24,36 @@ export class NewAnimalModalComponent {
     lastCalving: '' // Last Calving
   };
 
+  maleNames: string[] = []
+  femaleNames: string[] = []
+
+  animal: any[] = [];
+
   constructor(private dialogRef: MatDialogRef<NewAnimalModalComponent>, private animalService: AnimalService) {}
+
+  ngOnInit() {
+    this.loadAnimals();
+  }
+
+  loadAnimals() {
+    this.animalService.getAnimals().subscribe(
+      (data) => {
+        const maleNamesData = data
+          .filter(animal => animal.sex === 'Macho')
+          .map(animal => animal.name)
+
+          const femaleNamesData = data
+          .filter(animal => animal.sex === 'Fêmea')
+          .map(animal => animal.name)
+
+          this.maleNames = maleNamesData;
+          this.femaleNames = femaleNamesData;
+      },
+      (error) => {
+        console.error('Erro ao carregar os animais:', error); // Adicione este log para erros
+      }
+    );
+  }
 
   onCancel(): void {
     this.dialogRef.close();

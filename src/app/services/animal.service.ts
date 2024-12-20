@@ -24,8 +24,6 @@ export class AnimalService {
   addAnimal(animalData: any): Observable<any> {
     const payload = {
       ...animalData,
-      motherName: animalData.mother || '',
-      fatherName: animalData.father || '',
       registeredWithGovernment: false,
       receiveNotifications: false,
     };

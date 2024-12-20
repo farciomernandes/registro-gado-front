@@ -34,16 +34,24 @@
 
     <div class="form-group">
       <label for="pai">Pai</label>
-      <input id="pai" type="text" placeholder="Digite o pai" [(ngModel)]="formData.father" name="father" />
+      <select id="pai" [(ngModel)]="formData.father" name="father">
+        <option value="" disabled selected>Selecione</option>
+        <option *ngFor="let name of maleNames" [value]="name">{{ name }}</option>
+        <option value="RM1">RM1</option>
+      </select>
     </div>
 
     <div class="form-group">
       <label for="mae">Mãe</label>
-      <input id="mae" type="text" placeholder="Digite a mãe" [(ngModel)]="formData.mother" name="mother" />
+      <select id="mae" [(ngModel)]="formData.mother" name="mother">
+        <option value="" disabled selected>Selecione</option>
+        <option *ngFor="let name of femaleNames" [value]="name">{{ name }}</option>
+        <option value="RM1">RM1</option>
+      </select>
     </div>
 
     <div class="form-group">
-      <label for="rdc">RDC</label>
+      <label for="rdc">RDG</label>
       <input id="rdc" type="text" placeholder="Digite o RDG" [(ngModel)]="formData.rdg" name="rdg" />
     </div>
 
