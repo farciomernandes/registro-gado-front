@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-family-tree-buttons',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './family-tree-buttons.component.scss'
 })
 export class FamilyTreeButtonsComponent {
-
+  @Input()  animalName = '';
+  @Input()  breed = '';
+  @Input() sex = ''
+  @Input()  age = '';
+  @Input() picture = '';
 }

@@ -20,7 +20,8 @@
       <div class="tree-elements">
         <div>
           <img src="https://primaza.com.br/wp-content/uploads/2020/05/aplicar-brincos-gado.jpg.webp" alt="">
-          <app-family-tree-buttons></app-family-tree-buttons>
+          <app-family-tree-buttons [sex]="animal.sex" [animalName]="firstName" [breed]="animal.breed" [age]="animal.age">
+          </app-family-tree-buttons>
         </div>
       </div>
 
