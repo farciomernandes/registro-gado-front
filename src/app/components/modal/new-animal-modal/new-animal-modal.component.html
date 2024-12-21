@@ -3,71 +3,150 @@
 
 <form>
   <div class="form-grid">
-    <div class="form-group">
+    <div class="form-group" [ngClass]="{'has-error': formData.validationErrors?.name}">
       <label for="nome">Nome do Animal</label>
-      <input id="nome" type="text" placeholder="Digite o nome" [(ngModel)]="formData.name" name="name" />
+      <input
+        id="nome"
+        type="text"
+        placeholder="Digite o nome"
+        [(ngModel)]="formData.name"
+        name="name"
+      />
+      <span class="error-message" *ngIf="formData.validationErrors?.name">
+        {{ formData.validationErrors.name }}
+      </span>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" [ngClass]="{'has-error': formData.validationErrors?.breed}">
       <label for="raca">Raça</label>
-      <input id="raca" type="text" placeholder="Digite a raça" [(ngModel)]="formData.breed" name="breed" />
+      <input
+        id="raca"
+        type="text"
+        placeholder="Digite a raça"
+        [(ngModel)]="formData.breed"
+        name="breed"
+      />
+      <span class="error-message" *ngIf="formData.validationErrors?.breed">
+        {{ formData.validationErrors.breed }}
+      </span>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" [ngClass]="{'has-error': formData.validationErrors?.gender}">
       <label for="sexo">Sexo</label>
       <select id="sexo" [(ngModel)]="formData.gender" name="gender">
         <option value="" disabled selected>Selecione</option>
         <option>Macho</option>
         <option>Fêmea</option>
       </select>
+      <span class="error-message" *ngIf="formData.validationErrors?.gender">
+        {{ formData.validationErrors.gender }}
+      </span>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" [ngClass]="{'has-error': formData.validationErrors?.purity}">
       <label for="pureza">Pureza</label>
-      <input id="pureza" type="text" placeholder="Digite a pureza" [(ngModel)]="formData.purity" name="purity" />
+      <input
+        id="pureza"
+        type="text"
+        placeholder="Digite a pureza"
+        [(ngModel)]="formData.purity"
+        name="purity"
+      />
+      <span class="error-message" *ngIf="formData.validationErrors?.purity">
+        {{ formData.validationErrors.purity }}
+      </span>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" [ngClass]="{'has-error': formData.validationErrors?.birthDate}">
       <label for="dataNascimento">Data de Nascimento</label>
-      <input id="dataNascimento" type="date" [(ngModel)]="formData.birthDate" name="birthDate" />
+      <input
+        id="dataNascimento"
+        type="date"
+        [(ngModel)]="formData.birthDate"
+        name="birthDate"
+      />
+      <span class="error-message" *ngIf="formData.validationErrors?.birthDate">
+        {{ formData.validationErrors.birthDate }}
+      </span>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" [ngClass]="{'has-error': formData.validationErrors?.father}">
       <label for="pai">Pai</label>
       <select id="pai" [(ngModel)]="formData.father" name="father">
         <option value="" disabled selected>Selecione</option>
         <option *ngFor="let name of maleNames" [value]="name">{{ name }}</option>
-        <option value="RM1">RM1</option>
+        <option value="">RM1</option>
       </select>
+      <span class="error-message" *ngIf="formData.validationErrors?.father">
+        {{ formData.validationErrors.father }}
+      </span>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" [ngClass]="{'has-error': formData.validationErrors?.mother}">
       <label for="mae">Mãe</label>
       <select id="mae" [(ngModel)]="formData.mother" name="mother">
         <option value="" disabled selected>Selecione</option>
         <option *ngFor="let name of femaleNames" [value]="name">{{ name }}</option>
-        <option value="RM1">RM1</option>
+        <option value="">RM1</option>
       </select>
+      <span class="error-message" *ngIf="formData.validationErrors?.mother">
+        {{ formData.validationErrors.mother }}
+      </span>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" [ngClass]="{'has-error': formData.validationErrors?.rdg}">
       <label for="rdc">RDG</label>
-      <input id="rdc" type="text" placeholder="Digite o RDG" [(ngModel)]="formData.rdg" name="rdg" />
+      <input
+        id="rdc"
+        type="text"
+        placeholder="Digite o RDG"
+        [(ngModel)]="formData.rdg"
+        name="rdg"
+      />
+      <span class="error-message" *ngIf="formData.validationErrors?.rdg">
+        {{ formData.validationErrors.rdg }}
+      </span>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" [ngClass]="{'has-error': formData.validationErrors?.series}">
       <label for="serie">Série</label>
-      <input id="serie" type="text" placeholder="Digite a série" [(ngModel)]="formData.series" name="series" />
+      <input
+        id="serie"
+        type="text"
+        placeholder="Digite a série"
+        [(ngModel)]="formData.series"
+        name="series"
+      />
+      <span class="error-message" *ngIf="formData.validationErrors?.series">
+        {{ formData.validationErrors.series }}
+      </span>
     </div>
 
-    <div class="form-group">
-      <label for="serie">Númeração</label>
-      <input id="serie" type="text" placeholder="Digite a numeração" [(ngModel)]="formData.numeration" name="numeration" />
+    <div class="form-group" [ngClass]="{'has-error': formData.validationErrors?.numeration}">
+      <label for="numeracao">Numeração</label>
+      <input
+        id="numeracao"
+        type="text"
+        placeholder="Digite a numeração"
+        [(ngModel)]="formData.numeration"
+        name="numeration"
+      />
+      <span class="error-message" *ngIf="formData.validationErrors?.numeration">
+        {{ formData.validationErrors.numeration }}
+      </span>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" [ngClass]="{'has-error': formData.validationErrors?.lastCalving}">
       <label for="ultimaParicao">Última Vez Que Pariu</label>
-      <input id="ultimaParicao" type="date" [(ngModel)]="formData.lastCalving" name="lastCalving" />
+      <input
+        id="ultimaParicao"
+        type="date"
+        [(ngModel)]="formData.lastCalving"
+        name="lastCalving"
+      />
+      <span class="error-message" *ngIf="formData.validationErrors?.lastCalving">
+        {{ formData.validationErrors.lastCalving }}
+      </span>
     </div>
   </div>
 
