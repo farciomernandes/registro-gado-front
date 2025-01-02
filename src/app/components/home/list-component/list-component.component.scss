@@ -56,16 +56,32 @@
 }
 
 .custom-icon {
-  color: #1976d2; // Altere para a cor desejada
-  font-size: 0.7rem; // Tamanho do ícone
+  color: #1976d2;
+  font-size: 0.7rem;
 }
 
 .table-container th,
 .table-container td {
-  padding: 0.1rem 0.5rem; // Ajuste o valor para controlar o espaçamento
+  padding: 0.1rem 0.5rem;
   font-size: 0.7rem;
 }
 
 button{
   padding-bottom: 1rem;
+}
+
+@media (max-width: 1050px) {
+  .table-container {
+    width: 100%;
+    overflow-x: auto;
+    padding-left: 0;
+  }
+
+  table {
+    min-width: 68rem;
+  }
+
+  .table-footer {
+    width: 180%;
+  }
 }

@@ -30,3 +30,9 @@
     }
   }
 }
+
+@media (max-width: 1050px) {
+  .main-container{
+    display: none;
+  }
+}

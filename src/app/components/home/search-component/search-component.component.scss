@@ -46,3 +46,26 @@
     font-weight: 500;
   }
 }
+
+@media (max-width: 1050px) {
+  .container-child{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+
+    .informs{
+      margin: 0 auto 1rem auto;
+      width: 95%;
+    }
+  }
+
+  .main-container{
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  .search-component{
+    justify-content: center;
+  }
+}

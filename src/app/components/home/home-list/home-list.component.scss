@@ -67,3 +67,47 @@
     cursor: pointer;
   }
 }
+
+@media (max-width: 1050px) {
+  .main-container{
+    padding: 0;
+  }
+
+  .btn-plus{
+    button{
+     display: none;
+    }
+  }
+
+  .container-child-header{
+    justify-content: center;
+  }
+
+  .header{
+    gap: 0.5rem;
+    width: 95%;
+    margin: 0 auto;
+
+    select{
+      width: 9rem;
+    }
+
+    label{
+      font-size: 0.758rem;
+      font-weight: 500;
+    }
+
+
+    .selects{
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .select-container{
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+  }
+}
