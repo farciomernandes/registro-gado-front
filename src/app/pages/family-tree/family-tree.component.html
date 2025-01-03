@@ -1,8 +1,8 @@
 <main>
   <div>
-    <app-header class="header"></app-header>
+    <app-header class="header" (menuToggle)="toggleSidebar()"></app-header>
     <div class="sidebar">
-      <app-sidebar class="sidebar"></app-sidebar>
+      <app-sidebar class="sidebar" [isVisible]="isSidebarVisible"></app-sidebar>
     </div>
   </div>
 

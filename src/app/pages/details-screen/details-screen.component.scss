@@ -72,4 +72,21 @@ main{
   gap: 16px;
 }
 
+@media (max-width: 1050px){
+  .inputs {
+    display: grid;
+    grid-template-columns: repeat(2, 4fr);
+    gap: 16px;
+  }
 
+  .container-master{
+    justify-content: center;
+    gap: 0;
+  }
+
+  .img-animal-container{
+    img{
+      display: none;
+    }
+  }
+}

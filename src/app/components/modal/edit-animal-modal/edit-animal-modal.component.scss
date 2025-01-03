@@ -81,3 +81,11 @@ form {
     }
   }
 }
+
+@media (max-width: 1050px){
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}

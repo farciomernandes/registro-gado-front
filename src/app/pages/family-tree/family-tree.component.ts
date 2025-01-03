@@ -10,6 +10,7 @@ import { AnimalService } from '../../services/animal.service';
 export class FamilyTreeComponent {
   id: string | null = null;
   animal: any = null;
+  isSidebarVisible: boolean = false;
 
   father: any = null;
 
@@ -56,5 +57,9 @@ export class FamilyTreeComponent {
 
   get firstName(): string {
     return this.animal?.name?.split(' ')[0] || '';
+  }
+
+  toggleSidebar() {
+    this.isSidebarVisible = !this.isSidebarVisible;
   }
 }

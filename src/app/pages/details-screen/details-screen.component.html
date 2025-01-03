@@ -1,13 +1,13 @@
 <main>
   <div>
-    <app-header class="header"></app-header>
+    <app-header class="header" (menuToggle)="toggleSidebar()"></app-header>
     <div class="sidebar">
-      <app-sidebar></app-sidebar>
+      <app-sidebar [isVisible]="isSidebarVisible"></app-sidebar>
     </div>
   </div>
 
   <div class="container-master" *ngIf="animal">
-    <div>
+    <div class="img-animal-container">
       <img [src]="animal.image_url" width="320" height="330" alt="Foto do animal" />
     </div>
 

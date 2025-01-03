@@ -12,6 +12,7 @@ import { AnimalService } from '../../services/animal.service';
 export class DetailsScreenComponent {
   id: string = '';
   animal: any = null;
+  isSidebarVisible: boolean = false;
 
   constructor(private route: ActivatedRoute, public dialog: MatDialog, private animalService: AnimalService, private router: Router) {}
 
@@ -57,5 +58,9 @@ export class DetailsScreenComponent {
     } else {
       alert('ID do animal não encontrado!');
     }
+  }
+
+  toggleSidebar() {
+    this.isSidebarVisible = !this.isSidebarVisible;
   }
 }
