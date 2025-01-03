@@ -7,8 +7,13 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   searchCriteria: { field: string; value: string } | null = null;
+  isSidebarVisible: boolean = false;
 
   onSearchCriteriaChange(criteria: { field: string; value: string }) {
     this.searchCriteria = criteria;
+  }
+
+  toggleSidebar() {
+    this.isSidebarVisible = !this.isSidebarVisible;
   }
 }

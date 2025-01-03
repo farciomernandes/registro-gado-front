@@ -23,6 +23,7 @@
   lucide-angular{
    display: flex;
    justify-content: end;
+   cursor: pointer;
   }
 }
 
@@ -83,12 +84,36 @@
     gap: 1.5rem;
 
     img{
-      width: 8rem;
+      width: 7rem;
     }
 
     lucide-angular{
      display: flex;
      justify-content: end;
+     cursor: pointer;
+    }
+  }
+
+  .icons-container{
+    gap: 0.6rem;
+  }
+
+  .user{
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+
+    border: solid 2px $color-border;
+
+    lucide-angular{
+      width: 1.3rem;
+    }
+
+    p{
+      display: none;
+    }
+    span{
+      display: none;
     }
   }
 }

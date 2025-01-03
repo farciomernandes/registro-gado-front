@@ -1,4 +1,4 @@
-<div class="main-container">
+<div class="main-container" [ngClass]="{ 'visible': isVisible }">
   <div class="btn-container">
     <button routerLink="/home">
       <lucide-angular name="house" size="18" ></lucide-angular>
