@@ -6,12 +6,11 @@
       <div class="selects">
         <div class="select-container">
           <label>Sexo</label>
-
-          <select id="select-input">
+          <select id="select-sex" [(ngModel)]="selectedSex" (change)="onSexChange()">
             <option value="" disabled selected>SELECIONE</option>
-            <option>Todos</option>
-            <option>Macho</option>
-            <option>Fêmea</option>
+            <option value="Todos">Todos</option>
+            <option value="Macho">Macho</option>
+            <option value="Fêmea">Fêmea</option>
           </select>
         </div>
 

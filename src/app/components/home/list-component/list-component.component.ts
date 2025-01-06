@@ -44,15 +44,16 @@ export class ListComponentComponent implements OnChanges {
     this.loadAnimals();
   }
 
+
   loadAnimals() {
     this.animalService.getAnimals().subscribe(
       (data) => {
-        console.log('Dados carregados da API:', data); // Adicione este log
+        console.log('Dados carregados:', data);
         this.originalDataSource = data;
         this.dataSource = [...this.originalDataSource];
       },
       (error) => {
-        console.error('Erro ao carregar os animais:', error); // Adicione este log para erros
+        console.error('Erro ao carregar os animais:', error);
       }
     );
   }
@@ -87,29 +88,24 @@ export class ListComponentComponent implements OnChanges {
       item[field]?.toString().toLowerCase().includes(value.toLowerCase())
     );
   }
-
   ngOnChanges() {
     if (this.searchCriteria) {
       const { field, value } = this.searchCriteria;
 
-      if (!value) {
+      // Verifica se o valor é válido
+      if (value) {
+        this.dataSource = this.originalDataSource.filter((item) =>
+          item[field]?.toLowerCase() === value.toLowerCase()
+        );
+      } else {
+        // Exibe todos os itens se o valor for inválido
         this.dataSource = [...this.originalDataSource];
-        return;
       }
-
-      this.dataSource = this.originalDataSource.filter((item) => {
-        if (!field) {
-          return Object.values(item).some((val) =>
-            val?.toString().toLowerCase().includes(value.toLowerCase())
-          );
-        }
-
-        return item[field as keyof typeof item]
-          ?.toString()
-          .toLowerCase()
-          .includes(value.toLowerCase());
-      });
+    } else {
+      // Sem critério, exibe todos os itens
+      this.dataSource = [...this.originalDataSource];
     }
+    console.log('Dados filtrados:', this.dataSource); // Verificar resultado do filtro
   }
 
   deleteAnimal(id: string) {

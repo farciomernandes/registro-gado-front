@@ -10,6 +10,8 @@ import { MatDialog } from '@angular/material/dialog';
 export class HomeListComponent {
   constructor(public dialog: MatDialog) {}
 
+  selectedSex: string = '';
+
   searchCriteria: { field: string; value: string } | null = null;
 
   onSearchCriteriaChange(criteria: { field: string; value: string }) {
@@ -21,5 +23,14 @@ export class HomeListComponent {
     this.dialog.open(NewAnimalModalComponent, {
       width: '42rem',
     });
+  }
+
+  onSexChange(): void {
+    if (!this.selectedSex || this.selectedSex === 'Todos') {
+      this.searchCriteria = null;
+    } else {
+      this.searchCriteria = { field: 'sex', value: this.selectedSex };
+    }
+    console.log('Critério atualizado:', this.searchCriteria);
   }
 }
