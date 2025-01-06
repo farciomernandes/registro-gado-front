@@ -78,23 +78,14 @@ export class ListComponentComponent implements OnChanges {
   onSearchCriteriaChange(criteria: { field: string; value: string }) {
     const { field, value } = criteria;
 
-    if (!value) {
+    if (!value || !field) {
       this.dataSource = [...this.originalDataSource];
       return;
     }
 
-    this.dataSource = this.originalDataSource.filter((item) => {
-      if (!field) {
-        return Object.values(item).some((val) =>
-          val?.toString().toLowerCase().includes(value.toLowerCase())
-        );
-      }
-
-      return item[field as keyof typeof item]
-        ?.toString()
-        .toLowerCase()
-        .includes(value.toLowerCase());
-    });
+    this.dataSource = this.originalDataSource.filter((item) =>
+      item[field]?.toString().toLowerCase().includes(value.toLowerCase())
+    );
   }
 
   ngOnChanges() {

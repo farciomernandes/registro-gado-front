@@ -10,15 +10,15 @@
 
       <select id="select-input" [(ngModel)]="filterField" (change)="onSearchChange()">
         <option value="" disabled selected>Filtrar</option>
-        <option>Serie</option>
-        <option>Nome</option>
-        <option>Raça</option>
-        <option>Pureza</option>
-        <option>RDG</option>
-        <option>SEXO</option>
-        <option>PAI</option>
-        <option>MÃE</option>
-        <option>NASCIMENTO</option>
+        <option value="serie">Serie</option>
+        <option value="name">Nome</option>
+        <option value="breed">Raça</option>
+        <option value="purity">Pureza</option>
+        <option value="rgd">RDG</option>
+        <option value="sex">SEXO</option>
+        <option value="father">PAI</option>
+        <option value="mother">MÃE</option>
+        <option value="birthDate">NASCIMENTO</option>
       </select>
     </div>
   </div>

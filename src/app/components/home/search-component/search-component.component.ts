@@ -13,6 +13,10 @@ export class SearchComponentComponent {
 
 
   onSearchChange(): void {
-    this.searchCriteriaChange.emit({ field: this.filterField, value: this.filterValue });
+    if (this.filterField && this.filterValue) {
+      this.searchCriteriaChange.emit({ field: this.filterField, value: this.filterValue });
+    } else {
+      this.searchCriteriaChange.emit({ field: '', value: '' });
+    }
   }
 }
