@@ -27,6 +27,7 @@ import { EditAnimalModalComponent } from './components/modal/edit-animal-modal/e
 import { FamilyTreeComponent } from './pages/family-tree/family-tree.component';
 import { FamilyTreeButtonsComponent } from './components/family-tree-buttons/family-tree-buttons.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NotificationModalComponent } from './components/modal/notification-modal/notification-modal.component';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { HttpClientModule } from '@angular/common/http';
     EditAnimalModalComponent,
     FamilyTreeComponent,
     FamilyTreeButtonsComponent,
+    NotificationModalComponent,
   ],
   imports: [
     BrowserModule,
