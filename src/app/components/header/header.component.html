@@ -5,7 +5,10 @@
   </div>
 
   <div class="icons-container">
-    <lucide-angular name="bell" size="19"></lucide-angular>
+    <div class="notification-icon">
+      <lucide-angular name="bell" size="19" (click)="toggleModal()"></lucide-angular>
+      <span class="notification-count" *ngIf="notifications.length > 0">{{ notifications.length }}</span>
+    </div>
     <div class="user">
       <lucide-angular name="circle-user-round" width="22"></lucide-angular>
       <div class="user-info">
@@ -17,3 +20,8 @@
     </div>
   </div>
 </div>
+<app-notification-modal
+*ngIf="isModalOpen"
+[notifications]="notifications"
+(close)="toggleModal()">
+</app-notification-modal>

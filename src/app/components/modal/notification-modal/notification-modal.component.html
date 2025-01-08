@@ -1,0 +1,7 @@
+<div class="modal-backdrop" (click)="closeModal()"></div>
+<div class="notification-modal">
+  <h3>Notificações</h3>
+  <ul>
+    <li *ngFor="let notification of notifications">{{ notification }}</li>
+  </ul>
+</div>

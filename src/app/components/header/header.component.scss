@@ -27,6 +27,28 @@
   }
 }
 
+.notification-icon {
+  position: relative;
+  display: inline-block;
+}
+
+.notification-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  width: 0.7rem;
+  height:  0.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: bold;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
 .icons-container{
   display: flex;
   gap: 1.5rem;
