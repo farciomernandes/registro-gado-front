@@ -16,12 +16,9 @@
 
         <div class="select-container">
           <label>Pureza</label>
-
-          <select id="select-input">
+          <select id="select-input" [(ngModel)]="selectedPurity" (change)="onPurityChange()">
             <option value="" disabled selected>SELECIONE</option>
-            <option>Exemplo</option>
-            <option>Exemplo</option>
-            <option>Exemplo</option>
+            <option *ngFor="let purity of purities" [value]="purity">{{ purity }}</option>
           </select>
         </div>
       </div>
