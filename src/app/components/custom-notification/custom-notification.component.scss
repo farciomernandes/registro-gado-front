@@ -1,0 +1,42 @@
+.notification-wrapper {
+  background-color: rgb(128, 172, 134); // Fundo do card (erro)
+  border-left: 8px solid rgb(0, 134, 18); // Barra lateral vermelha
+  padding: 2rem;
+  border-radius: 12px;
+  color: #111f2f; // Título mais escuro
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Montserrat', sans-serif;
+
+  h2 {
+    margin: 0 0 0.75rem 0;
+    font-weight: bold;
+    font-size: 1.6rem;
+    font-family: 'Koulen', sans-serif;
+    color: #111f2f;
+  }
+
+  p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: rgb(255, 255, 255); // Texto do body
+    font-family: 'Josefin Sans', sans-serif;
+  }
+
+  .custom-btn {
+    border: 2px solid rgb(0, 255, 34);
+    color: rgb(10, 139, 27);
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 0.6rem 1.4rem;
+    font-family: 'Montserrat', sans-serif;
+    background-color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &:hover {
+      background-color: rgb(99, 165, 108);
+      color: white;
+    }
+  }
+}

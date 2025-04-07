@@ -28,6 +28,9 @@ import { FamilyTreeComponent } from './pages/family-tree/family-tree.component';
 import { FamilyTreeButtonsComponent } from './components/family-tree-buttons/family-tree-buttons.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NotificationModalComponent } from './components/modal/notification-modal/notification-modal.component';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getMessaging, provideMessaging } from '@angular/fire/messaging';
+import { firebaseConfig } from '../environments/environments';
 
 
 @NgModule({
@@ -61,10 +64,12 @@ import { NotificationModalComponent } from './components/modal/notification-moda
     MatCheckboxModule,
     MatIconModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    provideFirebaseApp(() => initializeApp(firebaseConfig)),
+    provideMessaging(() => getMessaging())
   ],
   bootstrap: [AppComponent]
 })
