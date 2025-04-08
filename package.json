@@ -2,11 +2,10 @@
   "name": "sistema-gado-registro",
   "version": "1.0.0",
   "scripts": {
-    "prestart": "ts-node set-env.ts",
     "ng": "ng",
     "dev": "ng serve",
     "server": "json-server --watch db.json --routes routes.json",
-    "build": "ts-node set-env.ts && ng build",
+    "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
