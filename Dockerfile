@@ -1,6 +1,6 @@
 FROM node:18-alpine
 
-RUN npm install -g @angular/cli
+RUN npm install -g @angular/cli http-server
 
 WORKDIR /app
 
@@ -9,6 +9,10 @@ RUN npm install
 
 COPY . .
 
+RUN ng build --configuration=production
+
+WORKDIR /app/dist/sistema-gado-registro
+
 EXPOSE 4200
 
-CMD ["ng", "serve", "--host", "0.0.0.0", "--port", "4200"]
+CMD ["http-server", "-p", "4200"]
