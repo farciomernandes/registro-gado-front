@@ -39,11 +39,11 @@ export class NewAnimalModalComponent implements OnInit {
     this.animalService.getAnimals().subscribe(
       (data) => {
         const maleNamesData = data
-          .filter(animal => animal.sex === 'Macho')
+          .filter(animal => animal.sex === 'M')
           .map(animal => animal.name)
 
           const femaleNamesData = data
-          .filter(animal => animal.sex === 'Fêmea')
+          .filter(animal => animal.sex === 'F')
           .map(animal => animal.name)
 
           this.maleNames = maleNamesData;
