@@ -8,7 +8,7 @@
 
   <div class="container-master" *ngIf="animal">
     <div class="img-animal-container">
-      <img [src]="animal.image_url" width="320" height="330" alt="Foto do animal" />
+      <img src="/assets/gado.webp" width="320" height="330" alt="Foto do animal" />
     </div>
 
     <div>
@@ -31,17 +31,23 @@
       </div>
 
       <div class="inputs">
-        <app-details-creen-inputs [labelName]="'Nome do animal'" [placeholderName]="animal.name"></app-details-creen-inputs>
+        <app-details-creen-inputs [labelName]="'Nome do animal'"
+          [placeholderName]="animal.name"></app-details-creen-inputs>
         <app-details-creen-inputs [labelName]="'Raça'" [placeholderName]="animal.breed"></app-details-creen-inputs>
         <app-details-creen-inputs [labelName]="'Sexo'" [placeholderName]="animal.sex"></app-details-creen-inputs>
         <app-details-creen-inputs [labelName]="'Pureza'" [placeholderName]="animal.purity"></app-details-creen-inputs>
-        <app-details-creen-inputs [labelName]="'Numeração'" [placeholderName]="animal.numeration"></app-details-creen-inputs>
+        <app-details-creen-inputs [labelName]="'Numeração'"
+          [placeholderName]="animal.numeration"></app-details-creen-inputs>
         <app-details-creen-inputs [labelName]="'Série'" [placeholderName]="animal.serie"></app-details-creen-inputs>
-        <app-details-creen-inputs [labelName]="'Data de nascimento'" [placeholderName]="animal.birthDate"></app-details-creen-inputs>
-        <app-details-creen-inputs [labelName]="'Última vez que pariu'" [placeholderName]="animal.lastBreeding"></app-details-creen-inputs>
+        <app-details-creen-inputs [labelName]="'Data de nascimento'"
+          [placeholderName]="animal.birthDate"></app-details-creen-inputs>
+        <app-details-creen-inputs [labelName]="'Última vez que pariu'"
+          [placeholderName]="animal.lastBreeding"></app-details-creen-inputs>
         <app-details-creen-inputs [labelName]="'RDG'" [placeholderName]="animal.rdg"></app-details-creen-inputs>
-        <app-details-creen-inputs [labelName]="'Pai'" [placeholderName]="animal.fatherName ? animal.fatherName : 'RM1'"></app-details-creen-inputs>
-        <app-details-creen-inputs [labelName]="'Mãe'" [placeholderName]="animal.motherName ? animal.motherName : 'RM1'"></app-details-creen-inputs>
+        <app-details-creen-inputs [labelName]="'Pai'"
+          [placeholderName]="animal.fatherName ? animal.fatherName : 'RM1'"></app-details-creen-inputs>
+        <app-details-creen-inputs [labelName]="'Mãe'"
+          [placeholderName]="animal.motherName ? animal.motherName : 'RM1'"></app-details-creen-inputs>
       </div>
     </div>
   </div>

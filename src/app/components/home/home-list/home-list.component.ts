@@ -8,8 +8,8 @@ import { AnimalService } from '../../../services/animal.service';
   templateUrl: './home-list.component.html',
   styleUrl: './home-list.component.scss'
 })
-export class HomeListComponent implements OnInit{
-  constructor(public dialog: MatDialog, private animalService: AnimalService) {}
+export class HomeListComponent implements OnInit {
+  constructor(public dialog: MatDialog, private animalService: AnimalService) { }
 
   selectedSex: string = '';
   purities: string[] = []
@@ -49,7 +49,7 @@ export class HomeListComponent implements OnInit{
 
   openNewAnimalModal(): void {
     this.dialog.open(NewAnimalModalComponent, {
-      width: '42rem',
+      width: '45rem',
     });
   }
 

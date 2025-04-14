@@ -31,6 +31,7 @@ import { NotificationModalComponent } from './components/modal/notification-moda
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getMessaging, provideMessaging } from '@angular/fire/messaging';
 import { firebaseConfig } from '../environments/environments';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -53,12 +54,20 @@ import { firebaseConfig } from '../environments/environments';
     NotificationModalComponent,
   ],
   imports: [
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+      progressBar: true,
+      progressAnimation: 'increasing',
+      newestOnTop: true,
+    }),
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     LucideAngularModule.pick({ Menu, Bell, CircleUserRound, ChevronDown, House, Network, Pen, Trash }),
     BrowserModule,
-    BrowserAnimationsModule,
     MatTableModule,
     MatMenuModule,
     MatCheckboxModule,

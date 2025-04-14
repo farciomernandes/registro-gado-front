@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { AnimalService } from '../../../services/animal.service';
+import { ToastService } from '../../../services/toastService';
 
 
 @Component({
@@ -29,7 +30,7 @@ export class NewAnimalModalComponent implements OnInit {
 
   animal: any[] = [];
 
-  constructor(private dialogRef: MatDialogRef<NewAnimalModalComponent>, private animalService: AnimalService) {}
+  constructor(private dialogRef: MatDialogRef<NewAnimalModalComponent>, private animalService: AnimalService, private toastService: ToastService) { }
 
   ngOnInit() {
     this.loadAnimals();
@@ -42,12 +43,12 @@ export class NewAnimalModalComponent implements OnInit {
           .filter(animal => animal.sex === 'M')
           .map(animal => animal.name)
 
-          const femaleNamesData = data
+        const femaleNamesData = data
           .filter(animal => animal.sex === 'F')
           .map(animal => animal.name)
 
-          this.maleNames = maleNamesData;
-          this.femaleNames = femaleNamesData;
+        this.maleNames = maleNamesData;
+        this.femaleNames = femaleNamesData;
       },
       (error) => {
         console.error('Erro ao carregar os animais:', error); // Adicione este log para erros
@@ -102,9 +103,13 @@ export class NewAnimalModalComponent implements OnInit {
       next: (response) => {
         console.log('Animal adicionado com sucesso:', response);
         this.dialogRef.close();
+        this.toastService.success('Animal cadastrado com sucesso!');
       },
       error: (error) => {
         console.error('Erro ao adicionar animal:', error);
+
+        const errorMessage = error?.error?.message || 'Erro ao cadastrar o animal.';
+        this.toastService.error(errorMessage);
       }
     });
   }

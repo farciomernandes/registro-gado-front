@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
   title = 'sistema-gado-registro';
   private messaging = inject(Messaging);
 
-  constructor(private messagingService: MessagingService) {}
+  constructor(private messagingService: MessagingService) { }
 
   ngOnInit() {
     this.messagingService.requestPermissionAndSubscribe();

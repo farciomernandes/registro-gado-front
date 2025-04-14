@@ -2,7 +2,7 @@
 
 @import "../src/theme/variables.scss";
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -10,5 +10,53 @@
   font-family: $font-montserrat;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+#toast-container>div {
+  z-index: 999999 !important;
+}
+
+#toast-container>div {
+  z-index: 999999 !important;
+}
+
+.toast-success {
+  background-color: #4CAF50 !important;
+  color: #fff !important;
+  font-weight: bold;
+  border-radius: 8px;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  text-align: center;
+  padding: 1rem 2rem;
+}
+
+.toast-error {
+  background-color: #f44336 !important;
+  color: #fff !important;
+  font-weight: bold;
+  font-size: 12px;
+  border-radius: 8px;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  text-align: center;
+  padding: 1rem 2rem;
+}
+
+.toast-message {
+  font-size: 12px !important;
+}
+
+.toast-close-button {
+  color: white !important;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

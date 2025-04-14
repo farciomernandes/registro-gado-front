@@ -25,6 +25,7 @@
     "esbuild": "^0.24.0",
     "lucide": "^0.468.0",
     "lucide-angular": "^0.468.0",
+    "ngx-toastr": "^19.0.0",
     "rxjs": "~7.8.0",
     "sistema-gado-registro": "file:",
     "tslib": "^2.3.0",

@@ -38,7 +38,7 @@ export class ListComponentComponent implements OnChanges {
     private router: Router,
     public dialog: MatDialog,
     private animalService: AnimalService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.loadAnimals();
@@ -70,9 +70,10 @@ export class ListComponentComponent implements OnChanges {
     this.router.navigate(['/details-screen'], { queryParams: { id: row.id } });
   }
 
-  openNewAnimalModal(): void {
+  openEditAnimalModal(animal: any): void {
     this.dialog.open(EditAnimalModalComponent, {
       width: '42rem',
+      data: animal
     });
   }
 

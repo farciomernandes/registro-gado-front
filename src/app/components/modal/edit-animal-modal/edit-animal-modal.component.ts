@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { NewAnimalModalComponent } from '../new-animal-modal/new-animal-modal.component';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { AnimalService } from '../../../services/animal.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-edit-animal-modal',
@@ -8,7 +10,14 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrl: './edit-animal-modal.component.scss'
 })
 export class EditAnimalModalComponent {
-  constructor(private dialogRef: MatDialogRef<NewAnimalModalComponent>) {}
+  constructor(
+    private dialogRef: MatDialogRef<EditAnimalModalComponent>,
+    private animalService: AnimalService,
+    private toastr: ToastrService,
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ) {
+    this.formData = { ...data };
+  }
 
   formData: any = {
     name: '', // Animal Name
@@ -28,7 +37,19 @@ export class EditAnimalModalComponent {
   }
 
   onSubmit(): void {
-    console.log('Form Data:', this.formData);
-    this.dialogRef.close();
+    if (!this.data?.id) {
+      this.toastr.error('ID do animal não informado.', 'Erro');
+      return;
+    }
+
+    this.animalService.editAnimal(this.data.id, this.formData).subscribe({
+      next: () => {
+        this.toastr.success('Animal editado com sucesso!');
+        this.dialogRef.close(true);
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });
   }
 }
